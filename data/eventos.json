@@ -1,0 +1,25 @@
+{
+  "eventos": [
+    {
+      "tag": "Sábado 8 agosto",
+      "tagColor": "green",
+      "titulo": "Concurso de Tapas Libre: ¡La Patata!",
+      "descripcion": "<strong>Presentación:</strong> 13:00 h. | <strong>Cata:</strong> 13:30 h.<br>Habrá 3 grandes premios. ¡Cada socio disfruta de una consumición y tapa gratis! Animaros a participar.",
+      "imagen": "concurso-tapas.jpeg"
+    },
+    {
+      "tag": "Sábado 8 agosto",
+      "tagColor": "gold",
+      "titulo": "Vuelven los Autos Locos en Torralba",
+      "descripcion": "Las bases e inscripciones estarán disponibles próximamente. ¡Preparad vuestros bólidos más originales y divertidos para la gran carrera!",
+      "imagen": "autos-locos.jpeg"
+    },
+    {
+      "tag": "Sábado 15 agosto",
+      "tagColor": "blue",
+      "titulo": "Gran Cena de Confraternización",
+      "descripcion": "Menú gourmet completo para socios en el Restaurante La Piscina de Oropesa. Recordad avisar alergias e intolerancias con antelación.",
+      "imagen": "cena-socios.jpg"
+    }
+  ]
+}
