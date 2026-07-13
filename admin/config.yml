@@ -1,0 +1,96 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Las imágenes que suba la directiva desde el panel se guardan en /uploads
+media_folder: "uploads"
+public_folder: "uploads"
+
+locale: "es"
+
+collections:
+  - name: "ajustes"
+    label: "🏠 Portada (hero)"
+    files:
+      - label: "Textos de la portada"
+        name: "site"
+        file: "data/site.json"
+        fields:
+          - {label: "Etiqueta superior", name: "eyebrow", widget: "string"}
+          - {label: "Título principal", name: "titulo", widget: "string"}
+          - {label: "Texto de bienvenida", name: "subtitulo", widget: "text"}
+          - {label: "Enlace del formulario de Votaciones (Google Forms, versión insertada)", name: "votacionesFormUrl", widget: "string", required: false, hint: "En tu Google Form: Enviar → pestaña <> → copia el enlace del src"}
+          - {label: "Enlace del formulario del Buzón de sugerencias (Google Forms, versión insertada)", name: "buzonFormUrl", widget: "string", required: false}
+
+  - name: "inicio"
+    label: "📌 Aviso destacado (Inicio)"
+    files:
+      - label: "Aviso destacado"
+        name: "inicio"
+        file: "data/inicio.json"
+        fields:
+          - {label: "Etiqueta (ej. Confirmar obligatorio)", name: "tag", widget: "string"}
+          - label: "Color de la etiqueta"
+            name: "tagColor"
+            widget: "select"
+            options: ["gold", "urgent", "green", "blue"]
+          - {label: "Título", name: "titulo", widget: "string"}
+          - {label: "Descripción", name: "descripcion", widget: "text"}
+          - {label: "Imagen / cartel", name: "imagen", widget: "image"}
+
+  - name: "eventos"
+    label: "🎉 Eventos"
+    files:
+      - label: "Lista de eventos"
+        name: "eventos"
+        file: "data/eventos.json"
+        fields:
+          - label: "Eventos"
+            name: "eventos"
+            widget: "list"
+            summary: "{{titulo}}"
+            fields:
+              - {label: "Fecha/etiqueta", name: "tag", widget: "string"}
+              - label: "Color de la etiqueta"
+                name: "tagColor"
+                widget: "select"
+                options: ["gold", "urgent", "green", "blue"]
+              - {label: "Título", name: "titulo", widget: "string"}
+              - {label: "Descripción", name: "descripcion", widget: "text"}
+              - {label: "Imagen / cartel", name: "imagen", widget: "image"}
+
+  - name: "junta"
+    label: "🤝 Junta Directiva"
+    files:
+      - label: "Miembros de la junta"
+        name: "junta"
+        file: "data/junta.json"
+        fields:
+          - label: "Miembros"
+            name: "miembros"
+            widget: "list"
+            summary: "{{nombre}} — {{cargo}}"
+            fields:
+              - {label: "Nombre", name: "nombre", widget: "string"}
+              - {label: "Cargo", name: "cargo", widget: "string"}
+              - {label: "Icono/Emoji", name: "avatar", widget: "string", hint: "Por ejemplo: 👑 🥈 📝 💰 🤝"}
+
+  - name: "historia"
+    label: "📖 Nuestra Historia"
+    files:
+      - label: "Historia de la peña"
+        name: "historia"
+        file: "data/historia.json"
+        fields:
+          - label: "Párrafos de la historia"
+            name: "parrafos"
+            widget: "list"
+            fields:
+              - {label: "Párrafo", name: "texto", widget: "text"}
+          - label: "Línea de tiempo"
+            name: "timeline"
+            widget: "list"
+            summary: "{{anio}}"
+            fields:
+              - {label: "Año / etapa", name: "anio", widget: "string"}
+              - {label: "Descripción", name: "texto", widget: "text"}
