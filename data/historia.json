@@ -1,0 +1,12 @@
+{
+  "parrafos": [
+    {"texto": "La Peña del Verraco nació de un grupo de vecinos de Torralba con ganas de que las fiestas del pueblo tuvieran más vida, más participación y más excusas para juntarse. El nombre rinde homenaje al verraco, símbolo de fuerza y de raíces de nuestra tierra."},
+    {"texto": "Desde entonces, la peña organiza cenas de confraternización, concursos, carreras y actividades para todas las edades, siempre gestionadas de forma transparente por una junta directiva elegida entre los propios socios."},
+    {"texto": "Hoy seguimos creciendo: más socios, más eventos y, con esta web, más formas de participar y opinar en las decisiones de la peña."}
+  ],
+  "timeline": [
+    {"anio": "Fundación", "texto": "Un grupo de socios fundadores pone en marcha la peña. (Sustituye por el año real.)"},
+    {"anio": "Primeros años", "texto": "Se celebran las primeras cenas de socios y concursos populares."},
+    {"anio": "2026", "texto": "Estrenamos portal web propio, con votaciones y buzón de sugerencias para todos los socios."}
+  ]
+}
