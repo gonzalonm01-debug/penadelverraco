@@ -1,0 +1,11 @@
+{
+  "miembros": [
+    {"nombre": "Diego", "cargo": "Presidente", "avatar": "👑"},
+    {"nombre": "Yolanda Cuadrado", "cargo": "Vicepresidenta", "avatar": "🥈"},
+    {"nombre": "Gonzalo Nava", "cargo": "Secretario", "avatar": "📝"},
+    {"nombre": "Rocío Olmedo", "cargo": "Tesorera", "avatar": "💰"},
+    {"nombre": "Marcos Nevado", "cargo": "Vocal", "avatar": "🤝"},
+    {"nombre": "Marcos", "cargo": "Vocal", "avatar": "🤝"},
+    {"nombre": "Emilio", "cargo": "Vocal", "avatar": "🤝"}
+  ]
+}
