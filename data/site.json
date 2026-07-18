@@ -3,5 +3,15 @@
   "titulo": "Asociación de la Peña del Verraco",
   "subtitulo": "Portal oficial de comunicación y gestión de la peña: eventos, cartelería, historia, votaciones, buzón de sugerencias y cuentas, todo en un mismo sitio.",
   "votacionesFormUrl": "https://docs.google.com/forms/d/e/PON-AQUI-TU-FORMULARIO/viewform?embedded=true",
-  "buzonFormUrl": "https://docs.google.com/forms/d/e/PON-AQUI-TU-FORMULARIO-SUGERENCIAS/viewform?embedded=true"
+  "buzonFormUrl": "https://docs.google.com/forms/d/e/PON-AQUI-TU-FORMULARIO-SUGERENCIAS/viewform?embedded=true",
+  "heroImagen": "cena-socios.jpg",
+  "colorFondo": "#18160f",
+  "colorTexto": "#f3ecdb",
+  "colorPrincipal": "#d6a53f",
+  "colorSecundario": "#b8451f",
+  "colorTerciario": "#4f7a63",
+  "colorCuaternario": "#4a6f8c",
+  "fuenteTitulos": "fraunces",
+  "fuenteTexto": "worksans",
+  "tamanoTexto": "normal"
 }
