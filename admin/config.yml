@@ -22,8 +22,43 @@ collections:
           - {label: "Etiqueta superior", name: "eyebrow", widget: "string"}
           - {label: "Título principal", name: "titulo", widget: "string"}
           - {label: "Texto de bienvenida", name: "subtitulo", widget: "text"}
+          - {label: "Foto de fondo de la portada", name: "heroImagen", widget: "image", required: false}
           - {label: "Enlace del formulario de Votaciones (Google Forms, versión insertada)", name: "votacionesFormUrl", widget: "string", required: false, hint: "En tu Google Form: Enviar → pestaña <> → copia el enlace del src"}
           - {label: "Enlace del formulario del Buzón de sugerencias (Google Forms, versión insertada)", name: "buzonFormUrl", widget: "string", required: false}
+          - {label: "Color de fondo", name: "colorFondo", widget: "color", required: false, hint: "El color oscuro de fondo de toda la web"}
+          - {label: "Color del texto", name: "colorTexto", widget: "color", required: false, hint: "El color claro del texto principal"}
+          - {label: "Color principal (dorado)", name: "colorPrincipal", widget: "color", required: false}
+          - {label: "Color secundario (teja/rojo)", name: "colorSecundario", widget: "color", required: false}
+          - {label: "Color terciario (verde)", name: "colorTerciario", widget: "color", required: false}
+          - {label: "Color cuaternario (azul)", name: "colorCuaternario", widget: "color", required: false}
+          - label: "Tipografía de los títulos"
+            name: "fuenteTitulos"
+            widget: "select"
+            required: false
+            options:
+              - {label: "Fraunces (actual)", value: "fraunces"}
+              - {label: "Playfair Display", value: "playfair"}
+              - {label: "Merriweather", value: "merriweather"}
+              - {label: "Libre Baskerville", value: "baskerville"}
+              - {label: "Bitter", value: "bitter"}
+          - label: "Tipografía del texto normal"
+            name: "fuenteTexto"
+            widget: "select"
+            required: false
+            options:
+              - {label: "Work Sans (actual)", value: "worksans"}
+              - {label: "Inter", value: "inter"}
+              - {label: "Lato", value: "lato"}
+              - {label: "Nunito Sans", value: "nunito"}
+              - {label: "Source Sans 3", value: "sourcesans"}
+          - label: "Tamaño del texto"
+            name: "tamanoTexto"
+            widget: "select"
+            required: false
+            options:
+              - {label: "Pequeño", value: "pequeno"}
+              - {label: "Normal (actual)", value: "normal"}
+              - {label: "Grande", value: "grande"}
 
   - name: "inicio"
     label: "📌 Aviso destacado (Inicio)"
@@ -77,6 +112,7 @@ collections:
               - {label: "Nombre", name: "nombre", widget: "string"}
               - {label: "Cargo", name: "cargo", widget: "string"}
               - {label: "Icono/Emoji", name: "avatar", widget: "string", hint: "Por ejemplo: 👑 🥈 📝 💰 🤝"}
+              - {label: "Foto (opcional, sustituye al emoji si la subes)", name: "foto", widget: "image", required: false}
 
   - name: "historia"
     label: "📖 Nuestra Historia"
@@ -85,6 +121,7 @@ collections:
         name: "historia"
         file: "data/historia.json"
         fields:
+          - {label: "Imagen (opcional)", name: "imagen", widget: "image", required: false}
           - label: "Párrafos de la historia"
             name: "parrafos"
             widget: "list"
