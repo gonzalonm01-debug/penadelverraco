@@ -1,17 +1,17 @@
 {
-  "eyebrow": "Torralba · Fiestas 2026",
-  "titulo": "Asociación de la Peña del Verraco",
-  "subtitulo": "Portal oficial de comunicación y gestión de la peña: eventos, cartelería, historia, votaciones, buzón de sugerencias y cuentas, todo en un mismo sitio.",
-  "votacionesFormUrl": "https://docs.google.com/forms/d/e/PON-AQUI-TU-FORMULARIO/viewform?embedded=true",
+  "tamanoTexto": "normal",
   "buzonFormUrl": "https://docs.google.com/forms/d/e/PON-AQUI-TU-FORMULARIO-SUGERENCIAS/viewform?embedded=true",
-  "heroImagen": "cena-socios.jpg",
-  "colorFondo": "#18160f",
-  "colorTexto": "#f3ecdb",
+  "eyebrow": "Torralba · Fiestas 2026",
   "colorPrincipal": "#d6a53f",
-  "colorSecundario": "#b8451f",
-  "colorTerciario": "#4f7a63",
+  "colorFondo": "#18160f",
+  "heroImagen": "uploads/550px-escudo_de_torralba_de_oropesa.svg.png",
   "colorCuaternario": "#4a6f8c",
   "fuenteTitulos": "fraunces",
+  "votacionesFormUrl": "https://docs.google.com/forms/d/e/PON-AQUI-TU-FORMULARIO/viewform?embedded=true",
+  "colorSecundario": "#b8451f",
   "fuenteTexto": "worksans",
-  "tamanoTexto": "normal"
+  "subtitulo": "Portal oficial de comunicación y gestión de la peña: eventos, cartelería, historia, votaciones, buzón de sugerencias y cuentas, todo en un mismo sitio.",
+  "titulo": "Asociación de la Peña del Verraco",
+  "colorTerciario": "#4f7a63",
+  "colorTexto": "#f3ecdb"
 }
