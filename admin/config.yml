@@ -1,6 +1,9 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: gonzalonm01-debug/penadelverraco
   branch: main
+  base_url: https://penadelverraco.pages.dev
+  auth_endpoint: /api/auth
 
 # Las imágenes que suba la directiva desde el panel se guardan en /uploads
 media_folder: "uploads"
