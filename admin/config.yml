@@ -23,6 +23,22 @@ collections:
           - {label: "Título principal", name: "titulo", widget: "string"}
           - {label: "Texto de bienvenida", name: "subtitulo", widget: "text"}
           - {label: "Foto de fondo de la portada", name: "heroImagen", widget: "image", required: false}
+          - label: "Tamaño de la portada"
+            name: "heroAltura"
+            widget: "select"
+            required: false
+            options:
+              - {label: "Compacta", value: "compacta"}
+              - {label: "Normal (actual)", value: "normal"}
+              - {label: "Grande", value: "grande"}
+          - label: "Posición vertical de la foto de portada"
+            name: "heroImagenPosicionY"
+            widget: "number"
+            required: false
+            hint: "De 0 (arriba) a 100 (abajo). Normal = 20. Súbelo o bájalo si la foto se ve recortada por el sitio equivocado."
+            value_type: "int"
+            min: 0
+            max: 100
           - {label: "Enlace del formulario de Votaciones (Google Forms, versión insertada)", name: "votacionesFormUrl", widget: "string", required: false, hint: "En tu Google Form: Enviar → pestaña <> → copia el enlace del src"}
           - {label: "Enlace del formulario del Buzón de sugerencias (Google Forms, versión insertada)", name: "buzonFormUrl", widget: "string", required: false}
           - {label: "Color de fondo", name: "colorFondo", widget: "color", required: false, hint: "El color oscuro de fondo de toda la web"}
@@ -59,6 +75,14 @@ collections:
               - {label: "Pequeño", value: "pequeno"}
               - {label: "Normal (actual)", value: "normal"}
               - {label: "Grande", value: "grande"}
+          - label: "Tamaño de los avatares de la Junta Directiva"
+            name: "juntaTamanoAvatar"
+            widget: "select"
+            required: false
+            options:
+              - {label: "Pequeño", value: "pequeno"}
+              - {label: "Normal (actual)", value: "normal"}
+              - {label: "Grande", value: "grande"}
 
   - name: "inicio"
     label: "📌 Aviso destacado (Inicio)"
@@ -75,6 +99,14 @@ collections:
           - {label: "Título", name: "titulo", widget: "string"}
           - {label: "Descripción", name: "descripcion", widget: "text"}
           - {label: "Imagen / cartel", name: "imagen", widget: "image"}
+          - label: "Tamaño de la imagen"
+            name: "imagenAltura"
+            widget: "select"
+            required: false
+            options:
+              - {label: "Compacta", value: "compacta"}
+              - {label: "Normal (actual)", value: "normal"}
+              - {label: "Grande", value: "grande"}
 
   - name: "eventos"
     label: "🎉 Eventos"
@@ -96,6 +128,14 @@ collections:
               - {label: "Título", name: "titulo", widget: "string"}
               - {label: "Descripción", name: "descripcion", widget: "text"}
               - {label: "Imagen / cartel", name: "imagen", widget: "image"}
+              - label: "Tamaño de la imagen"
+                name: "imagenAltura"
+                widget: "select"
+                required: false
+                options:
+                  - {label: "Compacta", value: "compacta"}
+                  - {label: "Normal (actual)", value: "normal"}
+                  - {label: "Grande", value: "grande"}
 
   - name: "junta"
     label: "🤝 Junta Directiva"
