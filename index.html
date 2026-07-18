@@ -7,8 +7,7 @@
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='31' fill='%231c1a17' stroke='%23c99a4d' stroke-width='2'/%3E%3Cpath d='M12 40 L17 28 L24 22 L22 15 L29 18 L34 15 L34 20 L43 18 L48 25 L54 25 L49 32 L52 40 L44 38 L40 45 L34 41 L28 46 L23 41 L14 45 Z' fill='%23c99a4d'/%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700;9..144,900&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700;9..144,900&family=Playfair+Display:wght@400;600;700;900&family=Merriweather:wght@300;400;700;900&family=Libre+Baskerville:wght@400;700&family=Bitter:wght@400;500;600;700;900&family=Work+Sans:wght@400;500;600&family=Inter:wght@400;500;600&family=Lato:wght@400;700;900&family=Nunito+Sans:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
         :root {
             /* --- Sistema de color: granito, oro de siega, rojo de pendón, teja y romero --- */
@@ -118,7 +117,7 @@
             position: relative;
             background:
                 linear-gradient(155deg, rgba(18,16,11,0.94) 20%, rgba(184,69,31,0.24) 100%),
-                url('cena-socios.jpg');
+                var(--hero-image, url('cena-socios.jpg'));
             background-size: cover;
             background-position: center 20%;
             padding: 100px 20px 86px;
@@ -708,13 +707,94 @@
     </div>
 
     <script>
-        // Detecta enlaces de invitación / recuperación de contraseña de Netlify Identity
-        // y muestra automáticamente la ventana para crear la contraseña.
-        if (window.netlifyIdentity) {
-            window.netlifyIdentity.on("init", user => {});
+        // --- Motor de estilo: colores, tipografías y tamaño de letra editables ---
+        const FUENTES_TITULOS = {
+            fraunces: "'Fraunces', serif",
+            playfair: "'Playfair Display', serif",
+            merriweather: "'Merriweather', serif",
+            baskerville: "'Libre Baskerville', serif",
+            bitter: "'Bitter', serif"
+        };
+        const FUENTES_TEXTO = {
+            worksans: "'Work Sans', sans-serif",
+            inter: "'Inter', sans-serif",
+            lato: "'Lato', sans-serif",
+            nunito: "'Nunito Sans', sans-serif",
+            sourcesans: "'Source Sans 3', sans-serif"
+        };
+        const TAMANOS_TEXTO = { pequeno: '15px', normal: '16px', grande: '18px' };
+
+        function hexToRgb(hex) {
+            if (!hex) return null;
+            const clean = hex.replace('#', '').slice(0, 6);
+            if (clean.length !== 6) return null;
+            const num = parseInt(clean, 16);
+            return { r: (num >> 16) & 255, g: (num >> 8) & 255, b: num & 255 };
         }
-    </script>
-    <script>
+        function rgbToHex(r, g, b) {
+            const c = v => Math.max(0, Math.min(255, Math.round(v))).toString(16).padStart(2, '0');
+            return '#' + c(r) + c(g) + c(b);
+        }
+        function mixColors(hexA, hexB, amount) {
+            const a = hexToRgb(hexA), b = hexToRgb(hexB);
+            if (!a || !b) return hexA;
+            return rgbToHex(
+                a.r + (b.r - a.r) * amount,
+                a.g + (b.g - a.g) * amount,
+                a.b + (b.b - a.b) * amount
+            );
+        }
+        function lighten(hex, amount) {
+            return mixColors(hex, '#ffffff', amount);
+        }
+
+        function renderTheme(site) {
+            if (!site) return;
+            const root = document.documentElement.style;
+            const fondo = site.colorFondo || '#18160f';
+            const texto = site.colorTexto || '#f3ecdb';
+
+            if (site.colorFondo) {
+                root.setProperty('--granite', fondo);
+                root.setProperty('--granite-mid', mixColors(fondo, texto, 0.06));
+                root.setProperty('--granite-hi', mixColors(fondo, texto, 0.10));
+                root.setProperty('--stone-line', mixColors(fondo, texto, 0.20));
+            }
+            if (site.colorTexto) {
+                root.setProperty('--limestone', texto);
+                root.setProperty('--limestone-dim', mixColors(texto, fondo, 0.25));
+                root.setProperty('--text-muted', mixColors(texto, fondo, 0.50));
+            }
+            if (site.colorPrincipal) {
+                root.setProperty('--wheat', site.colorPrincipal);
+                root.setProperty('--wheat-bright', lighten(site.colorPrincipal, 0.18));
+            }
+            if (site.colorSecundario) {
+                root.setProperty('--clay', site.colorSecundario);
+                root.setProperty('--clay-bright', lighten(site.colorSecundario, 0.18));
+            }
+            if (site.colorTerciario) {
+                root.setProperty('--rosemary', site.colorTerciario);
+                root.setProperty('--rosemary-bright', lighten(site.colorTerciario, 0.18));
+            }
+            if (site.colorCuaternario) {
+                root.setProperty('--dusk', site.colorCuaternario);
+                root.setProperty('--dusk-bright', lighten(site.colorCuaternario, 0.18));
+            }
+            if (site.fuenteTitulos) {
+                root.setProperty('--display', FUENTES_TITULOS[site.fuenteTitulos] || "'Fraunces', serif");
+            }
+            if (site.fuenteTexto) {
+                root.setProperty('--body', FUENTES_TEXTO[site.fuenteTexto] || "'Work Sans', sans-serif");
+            }
+            if (site.tamanoTexto) {
+                document.documentElement.style.fontSize = TAMANOS_TEXTO[site.tamanoTexto] || '16px';
+            }
+            if (site.heroImagen) {
+                root.setProperty('--hero-image', `url('${site.heroImagen}')`);
+            }
+        }
+
         // --- Carga de contenido editable (data/*.json) ---
         // Estos archivos los actualiza el panel de gestión en /admin sin tocar código.
         async function fetchJSON(path) {
@@ -730,6 +810,7 @@
 
         function renderHero(site) {
             if (!site) return;
+            renderTheme(site);
             if (site.eyebrow) document.getElementById('hero-eyebrow').textContent = site.eyebrow;
             if (site.titulo) document.getElementById('hero-titulo').textContent = site.titulo;
             if (site.subtitulo) document.getElementById('hero-subtitulo').textContent = site.subtitulo;
@@ -769,7 +850,7 @@
             const container = document.getElementById('junta-grid');
             container.innerHTML = data.miembros.map(m => `
                 <div class="junta-member">
-                    <div class="member-avatar">${m.avatar || '🤝'}</div>
+                    <div class="member-avatar">${m.foto ? `<img src="${m.foto}" alt="${m.nombre}" style="width:100%;height:100%;object-fit:cover;">` : (m.avatar || '🤝')}</div>
                     <h3>${m.nombre}</h3>
                     <p>${m.cargo}</p>
                 </div>`).join('');
@@ -779,7 +860,10 @@
             if (!data) return;
             if (Array.isArray(data.parrafos)) {
                 const container = document.getElementById('historia-parrafos');
-                container.innerHTML = data.parrafos.map(p => `<p>${p.texto}</p>`).join('');
+                const imagenHTML = data.imagen
+                    ? `<img src="${data.imagen}" alt="Historia de la peña" style="width:100%;border-radius:6px;margin-bottom:22px;border:1px solid var(--stone-line);">`
+                    : '';
+                container.innerHTML = imagenHTML + data.parrafos.map(p => `<p>${p.texto}</p>`).join('');
             }
             if (Array.isArray(data.timeline)) {
                 const container = document.getElementById('historia-timeline');
