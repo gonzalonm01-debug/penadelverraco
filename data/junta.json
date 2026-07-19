@@ -1,11 +1,46 @@
 {
   "miembros": [
-    {"nombre": "Diego", "cargo": "Presidente", "avatar": "👑", "foto": ""},
-    {"nombre": "Yolanda Cuadrado", "cargo": "Vicepresidenta", "avatar": "🥈", "foto": ""},
-    {"nombre": "Gonzalo Nava", "cargo": "Secretario", "avatar": "📝", "foto": ""},
-    {"nombre": "Rocío Olmedo", "cargo": "Tesorera", "avatar": "💰", "foto": ""},
-    {"nombre": "Marcos Nevado", "cargo": "Vocal", "avatar": "🤝", "foto": ""},
-    {"nombre": "Marcos", "cargo": "Vocal", "avatar": "🤝", "foto": ""},
-    {"nombre": "Emilio", "cargo": "Vocal", "avatar": "🤝", "foto": ""}
+    {
+      "nombre": "Diego",
+      "cargo": "Presidente",
+      "avatar": "👑",
+      "foto": ""
+    },
+    {
+      "nombre": "Yolanda Cuadrado",
+      "cargo": "Vicepresidenta",
+      "avatar": "🥈",
+      "foto": ""
+    },
+    {
+      "nombre": "Rocío Olmedo",
+      "cargo": "Tesorera",
+      "avatar": "💰",
+      "foto": ""
+    },
+    {
+      "nombre": "Gonzalo Nava",
+      "cargo": "Secretario",
+      "avatar": "📝",
+      "foto": ""
+    },
+    {
+      "nombre": "Marcos Nevado",
+      "cargo": "Vocal",
+      "avatar": "🤝",
+      "foto": ""
+    },
+    {
+      "nombre": "Marcos",
+      "cargo": "Vocal",
+      "avatar": "🤝",
+      "foto": ""
+    },
+    {
+      "nombre": "Emilio",
+      "cargo": "Vocal",
+      "avatar": "🤝",
+      "foto": ""
+    }
   ]
 }
