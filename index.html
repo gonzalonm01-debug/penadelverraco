@@ -7,7 +7,7 @@
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='31' fill='%231c1a17' stroke='%23c99a4d' stroke-width='2'/%3E%3Cpath d='M12 40 L17 28 L24 22 L22 15 L29 18 L34 15 L34 20 L43 18 L48 25 L54 25 L49 32 L52 40 L44 38 L40 45 L34 41 L28 46 L23 41 L14 45 Z' fill='%23c99a4d'/%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700;9..144,900&family=Playfair+Display:wght@400;600;700;900&family=Merriweather:wght@300;400;700;900&family=Libre+Baskerville:wght@400;700&family=Bitter:wght@400;500;600;700;900&family=Work+Sans:wght@400;500;600&family=Inter:wght@400;500;600&family=Lato:wght@400;700;900&family=Nunito+Sans:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700;9..144,900&family=Playfair+Display:wght@400;600;700;900&family=Merriweather:wght@300;400;700;900&family=Libre+Baskerville:wght@400;700&family=Bitter:wght@400;500;600;700;900&family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Serif+Display:wght@400&family=Crimson+Pro:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&family=Inter:wght@400;500;600&family=Lato:wght@400;700;900&family=Nunito+Sans:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&family=Mulish:wght@400;600;700&family=Karla:wght@400;600;700&family=PT+Sans:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -15,10 +15,12 @@
     <!-- MENÚ SUPERIOR -->
     <nav class="navbar">
         <a href="#" class="navbar-brand" onclick="showSection('inicio')">
-            <svg class="logo-badge" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                <circle class="ring" cx="32" cy="32" r="29" stroke-width="2"/>
-                <path class="mark" d="M14 40 L19 28 L26 22 L24 15 L31 18 L36 15 L36 20 L45 18 L50 25 L56 25 L51 32 L54 40 L46 38 L42 45 L36 41 L30 46 L25 41 L16 45 Z"/>
-            </svg>
+            <span id="navbar-logo">
+                <svg class="logo-badge" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                    <circle class="ring" cx="32" cy="32" r="29" stroke-width="2"/>
+                    <path class="mark" d="M14 40 L19 28 L26 22 L24 15 L31 18 L36 15 L36 20 L45 18 L50 25 L56 25 L51 32 L54 40 L46 38 L42 45 L36 41 L30 46 L25 41 L16 45 Z"/>
+                </svg>
+            </span>
             Peña del Verraco
         </a>
         <div class="nav-links">
@@ -37,11 +39,13 @@
     <!-- BIENVENIDA -->
     <div class="hero">
         <div class="hero-inner">
-            <svg class="hero-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="32" cy="32" r="29" fill="#18160f" stroke="#d6a53f" stroke-width="2"/>
-                <path d="M14 40 L19 28 L26 22 L24 15 L31 18 L36 15 L36 20 L45 18 L50 25 L56 25 L51 32 L54 40 L46 38 L42 45 L36 41 L30 46 L25 41 L16 45 Z" fill="#d6a53f"/>
-                <circle cx="42" cy="27" r="1.6" fill="#18160f"/>
-            </svg>
+            <span id="hero-logo">
+                <svg class="hero-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="32" cy="32" r="29" fill="#18160f" stroke="#d6a53f" stroke-width="2"/>
+                    <path d="M14 40 L19 28 L26 22 L24 15 L31 18 L36 15 L36 20 L45 18 L50 25 L56 25 L51 32 L54 40 L46 38 L42 45 L36 41 L30 46 L25 41 L16 45 Z" fill="#d6a53f"/>
+                    <circle cx="42" cy="27" r="1.6" fill="#18160f"/>
+                </svg>
+            </span>
             <div class="hero-text">
                 <span class="hero-eyebrow" id="hero-eyebrow">Torralba · Fiestas 2026</span>
                 <h1 id="hero-titulo">Asociación de la Peña del Verraco</h1>
@@ -343,14 +347,20 @@
             playfair: "'Playfair Display', serif",
             merriweather: "'Merriweather', serif",
             baskerville: "'Libre Baskerville', serif",
-            bitter: "'Bitter', serif"
+            bitter: "'Bitter', serif",
+            cormorant: "'Cormorant Garamond', serif",
+            dmserif: "'DM Serif Display', serif",
+            crimson: "'Crimson Pro', serif"
         };
         const FUENTES_TEXTO = {
             worksans: "'Work Sans', sans-serif",
             inter: "'Inter', sans-serif",
             lato: "'Lato', sans-serif",
             nunito: "'Nunito Sans', sans-serif",
-            sourcesans: "'Source Sans 3', sans-serif"
+            sourcesans: "'Source Sans 3', sans-serif",
+            mulish: "'Mulish', sans-serif",
+            karla: "'Karla', sans-serif",
+            ptsans: "'PT Sans', sans-serif"
         };
         const TAMANOS_TEXTO = { pequeno: '15px', normal: '16px', grande: '18px' };
         const TAMANOS_HERO = {
@@ -454,9 +464,18 @@
             }
         }
 
+        function renderLogo(site) {
+            if (!site || !site.logoImagen) return;
+            const navbarLogo = document.getElementById('navbar-logo');
+            const heroLogo = document.getElementById('hero-logo');
+            if (navbarLogo) navbarLogo.innerHTML = `<img src="${site.logoImagen}" class="logo-badge" alt="Logo">`;
+            if (heroLogo) heroLogo.innerHTML = `<img src="${site.logoImagen}" class="hero-logo" alt="Logo">`;
+        }
+
         function renderHero(site) {
             if (!site) return;
             renderTheme(site);
+            renderLogo(site);
             if (site.eyebrow) document.getElementById('hero-eyebrow').textContent = site.eyebrow;
             if (site.titulo) document.getElementById('hero-titulo').textContent = site.titulo;
             if (site.subtitulo) document.getElementById('hero-subtitulo').textContent = site.subtitulo;
@@ -508,8 +527,10 @@
             if (!data) return;
             if (Array.isArray(data.parrafos)) {
                 const container = document.getElementById('historia-parrafos');
+                const alturaImg = TAMANOS_IMAGEN[data.imagenAltura] || '';
+                const estiloImg = alturaImg ? ` style="width:100%;object-fit:cover;height:${alturaImg};border-radius:6px;margin-bottom:22px;border:1px solid var(--stone-line);"` : `style="width:100%;border-radius:6px;margin-bottom:22px;border:1px solid var(--stone-line);"`;
                 const imagenHTML = data.imagen
-                    ? `<img src="${data.imagen}" alt="Historia de la peña" style="width:100%;border-radius:6px;margin-bottom:22px;border:1px solid var(--stone-line);">`
+                    ? `<img src="${data.imagen}" alt="Historia de la peña"${estiloImg}>`
                     : '';
                 container.innerHTML = imagenHTML + data.parrafos.map(p => `<p>${p.texto}</p>`).join('');
             }
