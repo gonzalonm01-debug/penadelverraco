@@ -215,10 +215,10 @@
             text-transform: uppercase; letter-spacing: 0.06em; font-weight: 500;
             display: inline-block; margin-bottom: 12px; border: 1px solid;
         }
-        .card-tag.gold    { background: rgba(214,165,63,0.14); border-color: rgba(214,165,63,0.45); color: var(--wheat-bright); }
-        .card-tag.urgent  { background: rgba(184,69,31,0.16);  border-color: rgba(222,90,48,0.55);  color: #e88060; }
-        .card-tag.green   { background: rgba(79,122,99,0.18);  border-color: rgba(107,161,132,0.5); color: var(--rosemary-bright); }
-        .card-tag.blue    { background: rgba(74,111,140,0.2);  border-color: rgba(110,151,184,0.55); color: var(--dusk-bright); }
+        .card-tag.gold    { background: color-mix(in srgb, var(--wheat) 14%, transparent);    border-color: color-mix(in srgb, var(--wheat) 45%, transparent);    color: var(--wheat-bright); }
+        .card-tag.urgent  { background: color-mix(in srgb, var(--clay) 16%, transparent);     border-color: color-mix(in srgb, var(--clay-bright) 55%, transparent); color: var(--clay-bright); }
+        .card-tag.green   { background: color-mix(in srgb, var(--rosemary) 18%, transparent); border-color: color-mix(in srgb, var(--rosemary) 50%, transparent);  color: var(--rosemary-bright); }
+        .card-tag.blue    { background: color-mix(in srgb, var(--dusk) 20%, transparent);     border-color: color-mix(in srgb, var(--dusk) 55%, transparent);      color: var(--dusk-bright); }
 
         .card-title { font-size: 1.2rem; margin: 0 0 10px 0; color: var(--limestone); font-weight: 600; }
         .card-meta { color: var(--text-muted); font-size: 0.9rem; }
@@ -315,7 +315,7 @@
         }
 
         .btn-custom {
-            background-color: var(--clay); color: var(--limestone); border: none; padding: 13px 26px; border-radius: 4px;
+            background-color: var(--clay); color: var(--clay-text, var(--limestone)); border: none; padding: 13px 26px; border-radius: 4px;
             cursor: pointer; font-weight: 600; font-size: 0.92rem; transition: background 0.2s ease, transform 0.2s ease;
             text-decoration: none; display: inline-block;
         }
