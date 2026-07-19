@@ -80,7 +80,7 @@ var AjustesPreview = createClass({
     );
   }
 });
-CMS.registerPreviewTemplate('ajustes', AjustesPreview);
+CMS.registerPreviewTemplate('site', AjustesPreview);
 
 /* ---------- Vista previa: Aviso destacado de Inicio ---------- */
 var InicioPreview = createClass({
