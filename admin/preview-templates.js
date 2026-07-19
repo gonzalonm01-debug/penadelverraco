@@ -53,6 +53,15 @@ function mixColorsPreview(hexA, hexB, amount) {
 function lightenPreview(hex, amount) {
     return mixColorsPreview(hex, '#ffffff', amount);
 }
+function luminanciaPreview(hex) {
+    var rgb = hexToRgbPreview(hex);
+    if (!rgb) return 0.5;
+    var chan = function (v) {
+        var c = v / 255;
+        return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+    };
+    return 0.2126 * chan(rgb.r) + 0.7152 * chan(rgb.g) + 0.0722 * chan(rgb.b);
+}
 
 /* ---------- Vista previa: Portada (hero) y estilo general ---------- */
 var AjustesPreview = createClass({
@@ -85,6 +94,7 @@ var AjustesPreview = createClass({
       '--wheat-bright': lightenPreview(principal, 0.18),
       '--clay': secundario,
       '--clay-bright': lightenPreview(secundario, 0.18),
+      '--clay-text': luminanciaPreview(secundario) > 0.5 ? '#18160f' : '#f3ecdb',
       '--rosemary': terciario,
       '--rosemary-bright': lightenPreview(terciario, 0.18),
       '--dusk': cuaternario,
