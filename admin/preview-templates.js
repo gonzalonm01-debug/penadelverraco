@@ -7,14 +7,20 @@ var FUENTES_TITULOS_PREVIEW = {
   playfair: "'Playfair Display', serif",
   merriweather: "'Merriweather', serif",
   baskerville: "'Libre Baskerville', serif",
-  bitter: "'Bitter', serif"
+  bitter: "'Bitter', serif",
+  cormorant: "'Cormorant Garamond', serif",
+  dmserif: "'DM Serif Display', serif",
+  crimson: "'Crimson Pro', serif"
 };
 var FUENTES_TEXTO_PREVIEW = {
   worksans: "'Work Sans', sans-serif",
   inter: "'Inter', sans-serif",
   lato: "'Lato', sans-serif",
   nunito: "'Nunito Sans', sans-serif",
-  sourcesans: "'Source Sans 3', sans-serif"
+  sourcesans: "'Source Sans 3', sans-serif",
+  mulish: "'Mulish', sans-serif",
+  karla: "'Karla', sans-serif",
+  ptsans: "'PT Sans', sans-serif"
 };
 var ALTURAS_IMAGEN_PREVIEW = { compacta: '220px', normal: '340px', grande: '460px' };
 var PADDINGS_HERO_PREVIEW = { compacta: '50px 20px 40px', normal: '70px 20px 60px', grande: '100px 20px 90px' };
@@ -22,6 +28,7 @@ var AVATAR_PREVIEW = { pequeno: '48px', normal: '62px', grande: '84px' };
 
 // Carga la hoja de estilos real de la web dentro del iframe de vista previa.
 CMS.registerPreviewStyle('/styles.css');
+CMS.registerPreviewStyle('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700;9..144,900&family=Playfair+Display:wght@400;600;700;900&family=Merriweather:wght@300;400;700;900&family=Libre+Baskerville:wght@400;700&family=Bitter:wght@400;500;600;700;900&family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Serif+Display:wght@400&family=Crimson+Pro:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&family=Inter:wght@400;500;600&family=Lato:wght@400;700;900&family=Nunito+Sans:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&family=Mulish:wght@400;600;700&family=Karla:wght@400;600;700&family=PT+Sans:wght@400;700&display=swap');
 
 function hexToRgbPreview(hex) {
     if (!hex) return null;
@@ -101,6 +108,9 @@ var AjustesPreview = createClass({
     return h('div', { style: wrapperStyle },
       h('div', { className: 'hero', style: heroStyle },
         h('div', { className: 'hero-inner' },
+          data.get('logoImagen')
+            ? h('img', { src: getAsset(data.get('logoImagen')), style: { width: '80px', height: '80px', borderRadius: '50%', objectFit: 'cover', flexShrink: 0 } })
+            : null,
           h('div', { className: 'hero-text' },
             h('span', { className: 'hero-eyebrow' }, val('eyebrow', '')),
             h('h1', {}, val('titulo', '')),
@@ -214,11 +224,12 @@ var HistoriaPreview = createClass({
     var timeline = data.get('timeline') || [];
     var img = data.get('imagen');
     var url = img ? getAsset(img) : null;
+    var altura = ALTURAS_IMAGEN_PREVIEW[data.get('imagenAltura')];
 
     return h('div', { className: 'container', style: { background: 'var(--granite)', padding: '20px' } },
       h('div', { className: 'historia-layout' },
         h('div', { className: 'historia-text' },
-          url ? h('img', { src: url, style: { width: '100%', borderRadius: '6px', marginBottom: '16px' } }) : null,
+          url ? h('img', { src: url, style: { width: '100%', height: altura || 'auto', objectFit: 'cover', borderRadius: '6px', marginBottom: '16px' } }) : null,
           parrafos.map(function (p, i) {
             return h('p', { key: i }, p.get('texto'));
           }).toArray()
