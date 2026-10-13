@@ -7,12 +7,6 @@
       "foto": ""
     },
     {
-      "nombre": "Yolanda Cuadrado",
-      "cargo": "Vicepresidenta",
-      "avatar": "🥈",
-      "foto": ""
-    },
-    {
       "nombre": "Rocío Olmedo",
       "cargo": "Tesorera",
       "avatar": "💰",
@@ -41,6 +35,11 @@
       "cargo": "Vocal",
       "avatar": "🤝",
       "foto": ""
+    },
+    {
+      "nombre": "Raul Escudero",
+      "cargo": "Vicepresidente",
+      "avatar": " 🥈 "
     }
   ]
 }
