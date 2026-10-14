@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asociación Peña del Verraco — Torralba de Oropesa</title>
+    <title>Asociación Cultural El Verraco — Torralba de Oropesa</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* PALETA EXTRAÍDA DEL ESCUDO DE TORRALBA */
+            /* PALETA OFICIAL ESCUDO DE TORRALBA DE OROPESA */
             --blue-primary: #00509d;
             --blue-hover: #003f7a;
             --blue-light: #e8f1f9;
@@ -58,7 +58,7 @@
         }
 
         .navbar-brand {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             font-weight: 800;
             color: #ffffff;
             text-decoration: none;
@@ -72,7 +72,7 @@
             color: var(--blue-primary);
             padding: 2px 8px;
             border-radius: 4px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
         }
 
         .nav-links {
@@ -259,18 +259,14 @@
             text-align: center;
         }
 
-        .btn:hover {
-            background-color: var(--blue-hover);
-        }
+        .btn:hover { background-color: var(--blue-hover); }
 
         .btn-gold {
             background-color: var(--gold-accent);
             color: var(--text-dark);
         }
 
-        .btn-gold:hover {
-            background-color: #e5a400;
-        }
+        .btn-gold:hover { background-color: #e5a400; }
 
         .btn-outline {
             background: transparent;
@@ -278,9 +274,7 @@
             color: white;
         }
 
-        .btn-outline:hover {
-            background: rgba(255, 255, 255, 0.15);
-        }
+        .btn-outline:hover { background: rgba(255, 255, 255, 0.15); }
 
         .input-field {
             width: 100%;
@@ -298,341 +292,64 @@
             border-color: var(--blue-primary);
         }
 
-        /* --- JUNTA DIRECTIVA --- */
-        .grid-junta {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        /* --- ESTATUTOS RIGUROSOS Y OFICIALES --- */
+        .official-seal-box {
+            background: var(--blue-light);
+            border: 1px solid var(--blue-primary);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
             gap: 20px;
         }
 
-        .member-card {
+        .seal-icon {
+            font-size: 2.5rem;
+        }
+
+        .estatuto-capitulo {
             background: var(--surface-card);
             border: 1px solid var(--border-color);
-            border-top: 4px solid var(--blue-primary);
             border-radius: 8px;
-            padding: 25px 15px;
-            text-align: center;
+            margin-bottom: 20px;
+            overflow: hidden;
             box-shadow: var(--shadow-sm);
         }
 
-        .member-avatar {
-            font-size: 2rem;
-            background: var(--blue-light);
-            width: 65px;
-            height: 65px;
-            line-height: 65px;
-            border-radius: 50%;
-            margin: 0 auto 15px auto;
-            border: 2px solid var(--blue-primary);
-        }
-
-        /* --- PANEL DE GESTIÓN (DASHBOARD) --- */
-        .dashboard-container {
-            background: var(--surface-card);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: var(--shadow-md);
-        }
-
-        .dashboard-nav {
-            display: flex;
-            gap: 10px;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 15px;
-            margin-bottom: 25px;
-            flex-wrap: wrap;
-        }
-
-        .tab-btn {
-            background: var(--bg-body);
-            color: var(--text-muted);
-            border: 1px solid var(--border-color);
-            padding: 10px 18px;
-            border-radius: 6px;
+        .capitulo-header {
+            background: var(--blue-primary);
+            color: #ffffff;
+            padding: 16px 20px;
+            font-size: 1.1rem;
             font-weight: 700;
             cursor: pointer;
-            transition: all 0.2s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .tab-btn.active {
-            background: var(--blue-primary);
-            color: #fff;
-            border-color: var(--blue-primary);
+        .capitulo-content {
+            padding: 20px;
         }
 
-        .admin-panel {
-            display: none;
+        .articulo-item {
+            margin-bottom: 18px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed var(--border-color);
         }
 
-        .admin-panel.active {
-            display: block;
+        .articulo-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
         }
 
-        .resource-box {
-            background: var(--blue-light);
-            border: 2px dashed var(--blue-primary);
-            padding: 25px;
-            border-radius: 8px;
-            text-align: center;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-            transition: 0.2s;
+        .articulo-title {
+            color: var(--blue-primary);
+            font-weight: 700;
+            font-size: 0.98rem;
+            margin-bottom: 6px;
         }
 
-        .resource-box:hover {
-            background: #dbeafe;
-            transform: translateY(-2px);
-        }
-
-        /* --- RESPONSIVE --- */
-        @media(max-width: 768px) {
-            .navbar { flex-direction: column; gap: 12px; padding: 15px; text-align: center; }
-            .nav-links { justify-content: center; }
-            .hero h1 { font-size: 2.1rem; }
-        }
-    </style>
-</head>
-<body>
-
-    <!-- MENÚ DE NAVEGACIÓN -->
-    <nav class="navbar">
-        <a href="#" class="navbar-brand" onclick="showSection('inicio')">
-            🐗 Peña del Verraco <span>Torralba</span>
-        </a>
-        <div class="nav-links">
-            <a href="#" id="link-inicio" class="nav-link active" onclick="showSection('inicio')">Inicio</a>
-            <a href="#" id="link-eventos" class="nav-link" onclick="showSection('eventos')">Agenda</a>
-            <a href="#" id="link-junta" class="nav-link" onclick="showSection('junta')">Directiva</a>
-            <a href="#" id="link-normativa" class="nav-link" onclick="showSection('normativa')">Estatutos</a>
-            <a href="#" id="link-gestion" class="nav-link" onclick="showSection('gestion')">Gestión Interna</a>
-        </div>
-    </nav>
-
-    <!-- CABECERA HERO -->
-    <header class="hero">
-        <div class="hero-content">
-            <span class="hero-badge">Torralba de Oropesa • Fiestas 2026</span>
-            <h1>Asociación Cultural Peña del Verraco</h1>
-            <p>Portal oficial de comunicación, actividades y gestión transparente para los socios.</p>
-            <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
-                <button class="btn btn-gold" onclick="showSection('eventos')">Ver Programa de Eventos</button>
-                <button class="btn btn-outline" onclick="showSection('gestion')">Acceso Directiva</button>
-            </div>
-        </div>
-    </header>
-
-    <div class="container">
-
-        <!-- SECCIÓN INICIO -->
-        <div id="inicio" class="section active">
-            <div class="section-header">
-                <h2 class="section-title">Aviso Destacado</h2>
-                <p class="section-subtitle">Información prioritaria de la junta directiva para todos los socios.</p>
-            </div>
-            
-            <div class="grid" style="max-width: 500px; margin: 0 auto;">
-                <div class="card">
-                    <a href="cena-socios.jpg" target="_blank">
-                        <img src="cena-socios.jpg" alt="Cena de Socios" class="card-img">
-                    </a>
-                    <div class="card-body">
-                        <div>
-                            <span class="tag urgent">⚠️ Confirmar Obligatorio</span>
-                            <h3>Cena de Socios 2026 — Restaurante La Piscina</h3>
-                            <p><strong>Fecha:</strong> Sábado 15 de agosto · 21:30 h.<br>Menú tipo cóctel, barra libre y música hasta las 03:00 h.<br><strong style="color: var(--red-accent);">Plazo límite de confirmación: 9 de agosto.</strong></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- SECCIÓN AGENDA / EVENTOS -->
-        <div id="eventos" class="section">
-            <div class="section-header">
-                <h2 class="section-title">Programa de Eventos y Cartelería</h2>
-                <p class="section-subtitle">Haz clic sobre cualquier cartel para ampliar la imagen.</p>
-            </div>
-
-            <div class="grid">
-                <!-- Concurso de Tapas -->
-                <div class="card">
-                    <a href="concurso-tapas.jpeg" target="_blank">
-                        <img src="concurso-tapas.jpeg" alt="Concurso de Tapas" class="card-img">
-                    </a>
-                    <div class="card-body">
-                        <div>
-                            <span class="tag gold">Sábado 8 Agosto</span>
-                            <h3>Concurso de Tapas Libre: ¡La Patata!</h3>
-                            <p>Presentación a las 13:00 h y cata a las 13:30 h. 3 grandes premios y consumición con tapa gratis para cada socio.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Autos Locos -->
-                <div class="card">
-                    <a href="autos-locos.jpeg" target="_blank">
-                        <img src="autos-locos.jpeg" alt="Autos Locos" class="card-img">
-                    </a>
-                    <div class="card-body">
-                        <div>
-                            <span class="tag">Sábado 8 Agosto</span>
-                            <h3>Vuelven los Autos Locos en Torralba</h3>
-                            <p>Prepara vuestros bólidos más originales y divertidos para la gran bajada. Próximamente bases e inscripciones.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Cena de Socios -->
-                <div class="card">
-                    <a href="cena-socios.jpg" target="_blank">
-                        <img src="cena-socios.jpg" alt="Cena de Socios" class="card-img">
-                    </a>
-                    <div class="card-body">
-                        <div>
-                            <span class="tag urgent">Sábado 15 Agosto</span>
-                            <h3>Gran Cena de Confraternización</h3>
-                            <p>Cena completa en el Restaurante La Piscina de Oropesa. Recordad avisar alergias e intolerancias con antelación.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- SECCIÓN JUNTA DIRECTIVA -->
-        <div id="junta" class="section">
-            <div class="section-header">
-                <h2 class="section-title">Junta Directiva</h2>
-                <p class="section-subtitle">Representantes de la Asociación Cultural Peña del Verraco.</p>
-            </div>
-
-            <div class="grid-junta">
-                <div class="member-card"><div class="member-avatar">👑</div><h3>Diego</h3><p style="color:var(--blue-primary); font-weight:700; font-size:0.9rem;">Presidente</p></div>
-                <div class="member-card"><div class="member-avatar">🥈</div><h3>Yolanda Cuadrado</h3><p style="color:var(--blue-primary); font-weight:700; font-size:0.9rem;">Vicepresidenta</p></div>
-                <div class="member-card"><div class="member-avatar">📝</div><h3>Gonzalo Nava</h3><p style="color:var(--blue-primary); font-weight:700; font-size:0.9rem;">Secretario</p></div>
-                <div class="member-card"><div class="member-avatar">💰</div><h3>Rocío Olmedo</h3><p style="color:var(--blue-primary); font-weight:700; font-size:0.9rem;">Tesorera</p></div>
-                <div class="member-card"><div class="member-avatar">🤝</div><h3>Marcos Nevado</h3><p style="color:var(--blue-primary); font-weight:700; font-size:0.9rem;">Vocal</p></div>
-                <div class="member-card"><div class="member-avatar">🤝</div><h3>Marcos</h3><p style="color:var(--blue-primary); font-weight:700; font-size:0.9rem;">Vocal</p></div>
-                <div class="member-card"><div class="member-avatar">🤝</div><h3>Emilio</h3><p style="color:var(--blue-primary); font-weight:700; font-size:0.9rem;">Vocal</p></div>
-            </div>
-        </div>
-
-        <!-- SECCIÓN ESTATUTOS -->
-        <div id="normativa" class="section">
-            <div class="section-header">
-                <h2 class="section-title">Estatutos Oficiales</h2>
-                <p class="section-subtitle">Marco normativo de la entidad.</p>
-            </div>
-            <div class="card" style="padding: 25px;">
-                <h3 style="color: var(--blue-primary); margin-bottom: 10px;">Artículo 1: Denominación y Objeto</h3>
-                <p style="color: var(--text-muted);">La Asociación de la Peña del Verraco se constituye como entidad cultural y recreativa sin ánimo de lucro en Torralba de Oropesa, orientada al fomento de las festividades locales y la convivencia de sus socios.</p>
-            </div>
-        </div>
-
-        <!-- SECCIÓN GESTIÓN INTERNA -->
-        <div id="gestion" class="section">
-            <div class="section-header">
-                <h2 class="section-title">Escritorio de Gestión Interna</h2>
-                <p class="section-subtitle">Área de acceso exclusivo para la Junta Directiva.</p>
-            </div>
-
-            <!-- LOGIN -->
-            <div id="login-box" class="card" style="max-width: 420px; margin: 0 auto; padding: 35px 25px; text-align: center;">
-                <div style="font-size: 2.5rem; margin-bottom: 15px;">🔒</div>
-                <h3 style="margin-bottom: 10px;">Acceso Protegido</h3>
-                <p style="font-size: 0.9rem; margin-bottom: 20px; color: var(--text-muted);">Introduce la clave secreta de acceso:</p>
-                <input type="password" id="admin-pass" class="input-field" placeholder="Contraseña...">
-                <button class="btn" onclick="checkPassword()" style="width: 100%;">Ingresar al Panel</button>
-                <p id="login-error" style="color: var(--red-accent); font-size: 0.85rem; margin-top: 15px; display: none; font-weight: 700;">⚠️ Clave incorrecta</p>
-            </div>
-
-            <!-- DASHBOARD OCULTO -->
-            <div id="dashboard-box" class="dashboard-container" style="display: none;">
-                
-                <div class="dashboard-nav">
-                    <button class="tab-btn active" onclick="switchAdminTab('tab-links')">📂 Enlaces Maestros</button>
-                    <button class="tab-btn" onclick="switchAdminTab('tab-votaciones')">🗳️ Votaciones Activas</button>
-                    <button class="tab-btn" onclick="switchAdminTab('tab-cuentas')">📊 Balances y Cuentas</button>
-                </div>
-
-                <!-- Sub-Panel 1: Enlaces -->
-                <div id="tab-links" class="admin-panel active">
-                    <div class="grid">
-                        <a href="https://docs.google.com/spreadsheets/d/1aNNenQc3E_5HzvcqqcxxyveMbG2mJzGl/edit?rtpof=true&gid=540429647#gid=540429647" target="_blank" class="resource-box">
-                            <span style="font-size: 2.5rem;">👥</span>
-                            <h3 style="color: var(--blue-primary); margin: 10px 0 5px 0;">Libro Maestro de Socios</h3>
-                            <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0;">Gestión de cobros, cuotas y altas con Rocío Olmedo.</p>
-                        </a>
-                        <a href="https://docs.google.com/spreadsheets/d/1sDfrrNwYSFY1pFQ6vfoT_BHD8uujr8HiGidAIFfPW3M/edit?gid=1085146374#gid=1085146374" target="_blank" class="resource-box">
-                            <span style="font-size: 2.5rem;">🗂️</span>
-                            <h3 style="color: var(--blue-primary); margin: 10px 0 5px 0;">Cuentas Generales</h3>
-                            <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0;">Presupuestos y gastos de la peña.</p>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Sub-Panel 2: Votaciones -->
-                <div id="tab-votaciones" class="admin-panel">
-                    <div style="background: var(--blue-light); padding: 20px; border-radius: 8px; border-left: 4px solid var(--blue-primary);">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                            <strong style="font-size: 1.05rem; color: var(--blue-primary);">Elección de Orquesta — Fiestas 2026</strong>
-                            <span class="tag gold" style="margin: 0;">En Proceso</span>
-                        </div>
-                        <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Sondeo activo para la contratación musical del sábado noche.</p>
-                    </div>
-                </div>
-
-                <!-- Sub-Panel 3: Cuentas -->
-                <div id="tab-cuentas" class="admin-panel">
-                    <div style="background: var(--bg-body); padding: 20px; border-radius: 8px; border: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
-                        <div>
-                            <strong style="color: var(--blue-primary);">Ejercicio Económico 2026 — Primer Trimestre</strong>
-                            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 3px;">Auditoría de fondos y caja inicial.</p>
-                        </div>
-                        <a href="https://docs.google.com/spreadsheets/d/1sDfrrNwYSFY1pFQ6vfoT_BHD8uujr8HiGidAIFfPW3M/edit?gid=1085146374#gid=1085146374" target="_blank" class="btn" style="padding: 8px 16px; font-size: 0.85rem;">Ver Excel ↗</a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-    </div>
-
-    <!-- SCRIPTS -->
-    <script>
-        function showSection(sectionId) {
-            document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
-            document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
-            
-            const target = document.getElementById(sectionId);
-            if (target) target.classList.add('active');
-            
-            const link = document.getElementById('link-' + sectionId);
-            if (link) link.classList.add('active');
-            
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        function checkPassword() {
-            const pass = document.getElementById('admin-pass').value;
-            if (pass === "verraco2026") {
-                document.getElementById('login-box').style.display = 'none';
-                document.getElementById('dashboard-box').style.display = 'block';
-            } else {
-                document.getElementById('login-error').style.display = 'block';
-            }
-        }
-
-        function switchAdminTab(tabId) {
-            document.querySelectorAll('.admin-panel').forEach(panel => panel.classList.remove('active'));
-            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            
-            const panel = document.getElementById(tabId);
-            if (panel) panel.classList.add('active');
-            
-            event.target.classList.add('active');
-        }
-    </script>
-</body>
-</html>
+        .
