@@ -292,7 +292,7 @@
             border-color: var(--blue-primary);
         }
 
-        /* --- ESTATUTOS RIGUROSOS Y OFICIALES --- */
+        /* --- ESTATUTOS RIGUROSOS Y COMPLETOS --- */
         .official-seal-box {
             background: var(--blue-light);
             border: 1px solid var(--blue-primary);
@@ -304,9 +304,7 @@
             gap: 20px;
         }
 
-        .seal-icon {
-            font-size: 2.5rem;
-        }
+        .seal-icon { font-size: 2.5rem; }
 
         .estatuto-capitulo {
             background: var(--surface-card);
@@ -329,9 +327,7 @@
             align-items: center;
         }
 
-        .capitulo-content {
-            padding: 20px;
-        }
+        .capitulo-content { padding: 20px; }
 
         .articulo-item {
             margin-bottom: 18px;
@@ -356,6 +352,15 @@
             color: var(--text-dark);
             font-size: 0.92rem;
             text-align: justify;
+        }
+
+        .articulo-text ul {
+            padding-left: 20px;
+            margin-top: 5px;
+        }
+
+        .articulo-text li {
+            margin-bottom: 4px;
         }
 
         /* --- JUNTA DIRECTIVA --- */
@@ -386,7 +391,7 @@
             border: 2px solid var(--blue-primary);
         }
 
-        /* --- PANEL DE GESTIÓN (DASHBOARD) --- */
+        /* --- PANEL DE GESTIÓN --- */
         .dashboard-container {
             background: var(--surface-card);
             border: 1px solid var(--border-color);
@@ -474,7 +479,7 @@
             <p>Portal oficial de comunicación, actividades y régimen legal transparente para todos los socios.</p>
             <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
                 <button class="btn btn-gold" onclick="showSection('eventos')">Ver Programa de Eventos</button>
-                <button class="btn btn-outline" onclick="showSection('normativa')">Consultar Estatutos Registrados</button>
+                <button class="btn btn-outline" onclick="showSection('normativa')">Consultar Estatutos Completos</button>
             </div>
         </div>
     </header>
@@ -574,11 +579,11 @@
             </div>
         </div>
 
-        <!-- SECCIÓN ESTATUTOS OFICIALES (TRANSCRIPCIÓN COMPLETA DEL DOCUMENTO) -->
+        <!-- SECCIÓN ESTATUTOS OFICIALES ÍNTEGROS (TEXTO COMPLETO DE LOS DOCUMENTOS) -->
         <div id="normativa" class="section">
             <div class="section-header">
-                <h2 class="section-title">Estatutos Oficiales Registrados</h2>
-                <p class="section-subtitle">Texto íntegro aprobado en Asamblea General e inscrito en la Junta de Comunidades de Castilla-La Mancha.</p>
+                <h2 class="section-title">Estatutos Oficiales Registrados (Texto Íntegro)</h2>
+                <p class="section-subtitle">Transcripción completa de los artículos aprobados e inscritos en la Junta de Comunidades de Castilla-La Mancha.</p>
             </div>
 
             <!-- Ficha de Registro Oficial -->
@@ -593,34 +598,33 @@
             </div>
 
             <!-- Buscador de Artículos -->
-            <input type="text" id="search-estatutos" class="input-field" placeholder="🔍 Buscar artículo o término (ej. cuotas, votación, asamblea, directiva...)" onkeyup="filterEstatutos()">
+            <input type="text" id="search-estatutos" class="input-field" placeholder="🔍 Buscar por artículo, palabra clave o contenido (ej. cuotas, asamblea, directiva, disolución...)" onkeyup="filterEstatutos()">
 
             <!-- CAPÍTULO PRIMERO -->
             <div class="estatuto-capitulo">
                 <div class="capitulo-header" onclick="toggleCapitulo('cap1')">
-                    <span>CAPÍTULO PRIMERO: De la Asociación en General</span>
+                    <span>CAPÍTULO PRIMERO: Constitución, Domicilio, Fines y Actividades</span>
                     <span id="icon-cap1">▼</span>
                 </div>
                 <div class="capitulo-content" id="cap1">
                     <div class="articulo-item">
-                        <div class="articulo-title">Artículo 1º. Constitución y Régimen Legal</div>
-                        <div class="articulo-text">Se constituye la Asociación sin ánimo de lucro denominada <strong>ASOCIACIÓN CULTURAL EL VERRACO</strong>, que se regirá por la Constitución, la Ley Orgánica 1/2002, de 22 de marzo, reguladora del Derecho de Asociación y por los presentes Estatutos[cite: 4].</div>
+                        <div class="articulo-title">Artículo 1º</div>
+                        <div class="articulo-text">Se constituye la Asociación sin ánimo de lucro denominada <strong>ASOCIACIÓN CULTURAL EL VERRACO</strong>, que se regirá por la Constitución, la Ley Orgánica 1/2002, de 22 de marzo, reguladora del Derecho de Asociación (B.O.E. núm. 73, del día 26), el resto del ordenamiento jurídico aplicable y por los presentes Estatutos[cite: 4]. La organización interna y funcionamiento de la Asociación, que también se llevarán a cabo dentro del marco de las normas citadas, son democráticos y con pleno respeto al pluralismo[cite: 4].</div>
                     </div>
                     <div class="articulo-item">
-                        <div class="articulo-title">Artículo 2º. Domicilio Social</div>
-                        <div class="articulo-text">La Asociación tendrá su domicilio en la localidad de <strong>Torralba de Oropesa</strong> (provincia de Toledo), en la Plaza de La Constitución, número 1[cite: 4].</div>
+                        <div class="articulo-title">Artículo 2º (Domicilio y Ámbito)</div>
+                        <div class="articulo-text">La Asociación tendrá su domicilio en la localidad de <strong>Torralba de Oropesa</strong> (provincia de Toledo), en la plaza de La Constitución, número 1[cite: 4]. Tendrá una duración indefinida y realizará principalmente sus actividades en el Municipio y Región Castilla La Mancha[cite: 4].</div>
                     </div>
                     <div class="articulo-item">
-                        <div class="articulo-title">Artículo 3º. Duración y Ámbito Territorial</div>
-                        <div class="articulo-text">La Asociación tendrá una duración indefinida y realizará principalmente sus actividades en el Municipio y Región de Castilla-La Mancha[cite: 4].</div>
+                        <div class="articulo-title">Artículo 3º y 4º (Fines)</div>
+                        <div class="articulo-text">La Asociación pretende desarrollar los siguientes fines: estimular a los socios y organizar actividades, fomentando las tradiciones y cultura de nuestra localidad[cite: 4].</div>
                     </div>
                     <div class="articulo-item">
-                        <div class="articulo-title">Artículo 4º. Fines Principales</div>
-                        <div class="articulo-text">Estimular a los socios y organizar actividades. Fomentar las tradiciones y cultura de nuestra localidad[cite: 4].</div>
-                    </div>
-                    <div class="articulo-item">
-                        <div class="articulo-title">Artículo 5º. Actividades</div>
-                        <div class="articulo-text">Viajes culturales, colaboración junto con el Ayuntamiento en actividades en las Fiestas Patronales, Carnavales, Navidad y ayuda a los necesitados[cite: 4]. Los posibles beneficios obtenidos se destinarán exclusivamente al cumplimiento de estos fines sin reparto entre asociados[cite: 4].</div>
+                        <div class="articulo-title">Artículo 5º (Actividades y Beneficios)</div>
+                        <div class="articulo-text">
+                            Para el cumplimiento de estos fines la asociación realizará las siguientes actividades: viajes culturales, colaboración junto con el Ayuntamiento en actividades en las fiestas patronales, carnavales, navidad y ayuda a los necesitados[cite: 4].<br>
+                            Los posibles beneficios obtenidos por la asociación, derivado del ejercicio de actividades económicas, incluidas las prestaciones de servicios, deberán destinarse, exclusivamente, al cumplimiento de los fines mencionados, sin que quepa en ningún caso su reparto entre los asociados ni entre sus cónyuges o personas que convivan con aquellos con análoga relación de afectividad, ni entre sus parientes, ni su cesión gratuita a personas físicas o jurídicas con interés lucrativo[cite: 4].
+                        </div>
                     </div>
                 </div>
             </div>
@@ -628,17 +632,56 @@
             <!-- CAPÍTULO SEGUNDO -->
             <div class="estatuto-capitulo">
                 <div class="capitulo-header" onclick="toggleCapitulo('cap2')">
-                    <span>CAPÍTULO SEGUNDO: Órganos Directivos y de Administración</span>
+                    <span>CAPÍTULO SEGUNDO: De los Órganos Directivos y de la Forma de Administración</span>
                     <span id="icon-cap2">▼</span>
                 </div>
                 <div class="capitulo-content" id="cap2">
                     <div class="articulo-item">
-                        <div class="articulo-title">Artículo 6º al 9º. Asamblea General</div>
-                        <div class="articulo-text">La Asamblea General es el órgano supremo de gobierno[cite: 5]. Se reunirá obligatoriamente en sesión ordinaria una vez al año[cite: 5]. Las convocatorias se harán con al menos 15 días de antelación[cite: 5]. Los acuerdos se adoptarán por mayoría simple de los presentes o representados[cite: 5].</div>
+                        <div class="articulo-title">Artículo 6º (Órganos de Gobierno)</div>
+                        <div class="articulo-text">El gobierno y la representación de la Asociación correrán a cargo de la Asamblea General y de la Junta Directiva[cite: 5].</div>
                     </div>
                     <div class="articulo-item">
-                        <div class="articulo-title">Artículo 10º a 17º. Junta Directiva y Cargos</div>
-                        <div class="articulo-text">La Junta Directiva se compone de Presidente, Secretario, Tesorero y Vocales[cite: 5]. Los cargos serán gratuitos, elegidos por la Asamblea General por un período de <strong>dos años</strong>, pudiendo ser reelegidos[cite: 6]. El Presidente ostenta la representación legal y voto de calidad[cite: 6].</div>
+                        <div class="articulo-title">Artículo 7º (Asamblea General)</div>
+                        <div class="articulo-text">La Asamblea General, integrada por todos los asociados, es el órgano supremo de gobierno de la Asociación que será convocada en sesión ordinaria, obligatoriamente, una vez al año, y con carácter extraordinario cuando así lo acuerde la Junta Directiva en atención a los asuntos que deba tratar, y siempre a solicitud de la décima parte de los socios o para acordar la disposición o enajenación de bienes, nombramiento de Junta Directiva, solicitud de declaración de utilidad pública, modificaciones estatutarias y disolución de la Asociación[cite: 5].</div>
+                    </div>
+                    <div class="articulo-item">
+                        <div class="articulo-title">Artículo 8º (Convocatoria de Asamblea)</div>
+                        <div class="articulo-text">La convocatoria de la Asamblea General, sea ordinaria o extraordinaria, será hecha por escrito, expresando el lugar, fecha y hora de la reunión, así como el orden del día. Entre la convocatoria y el día señalado para la celebración de la Asamblea, en primera convocatoria, habrán de mediar al menos quince días pudiendo asimismo hacerse constar la fecha en la que, si procediera, se reunirá la Asamblea General en segunda convocatoria, sin que entre una y otra reunión pueda mediar un plazo inferior a veinticuatro horas. En el supuesto de que no hubiese previsto en el anuncio la fecha de la segunda convocatoria deberá ser ésta hecha con ocho días de antelación a la fecha de la reunión[cite: 5].</div>
+                    </div>
+                    <div class="articulo-item">
+                        <div class="articulo-title">Artículo 9º (Constitución y Acuerdos)</div>
+                        <div class="articulo-text">La Asamblea General, quedará válidamente constituida en primera convocatoria, cuando concurra a ellas, presentes o representados, un tercio de los asociados y su presidente y su secretario serán designados al inicio de la reunión; y en segunda convocatoria cualquiera que sea el número de concurrentes[cite: 5]. Los acuerdos se adoptarán por mayoría simple de las personas presentes o representadas, cuando los votos afirmativos superen a los negativos, excepto cuando se trate de acuerdos relativos a disolución de la asociación, modificación de los Estatutos y disposición o enajenación de bienes, en cuyo caso se requerirá mayoría cualificada de las personas presentes o representadas, que resultará cuando la mayoría de los votos afirmativos superen la mitad[cite: 5].</div>
+                    </div>
+                    <div class="articulo-item">
+                        <div class="articulo-title">Artículo 10º (Junta Directiva)</div>
+                        <div class="articulo-text">La Junta Directiva estará formada por un Presidente, un Secretario, un Tesorero y tres vocales. Todos los cargos deberán recaer en asociados mayores de edad, en pleno uso de sus derechos civiles y que no estén incursos en los motivos de incompatibilidad establecida en la legislación vigente[cite: 5].</div>
+                    </div>
+                    <div class="articulo-item">
+                        <div class="articulo-title">Artículo 11º y 12º (Gratuidad y Funciones)</div>
+                        <div class="articulo-text">Los cargos que componen la Junta Directiva serán gratuitos, elegidos en Asamblea General y durarán un periodo de dos años, pudiendo ser objeto de reelección[cite: 6]. Es función de la Junta Directiva dirigir las actividades de la Asociación y llevar la gestión administrativa y económica de la misma, ejecutando los acuerdos de la Asamblea General, y someter a ésta las cuentas de la asociación[cite: 6].</div>
+                    </div>
+                    <div class="articulo-item">
+                        <div class="articulo-title">Artículo 13º y 14º (Reuniones y Comisiones)</div>
+                        <div class="articulo-text">La Junta Directiva celebrará sus sesiones cuantas veces lo determine su presidente, a iniciativa propia o petición de cualquiera de sus miembros[cite: 6]. Los miembros de la Junta Directiva presidirán las comisiones que la propia Junta acuerde constituir[cite: 6].</div>
+                    </div>
+                    <div class="articulo-item">
+                        <div class="articulo-title">Artículo 15º (Atribuciones del Presidente)</div>
+                        <div class="articulo-text">
+                            El Presidente de la Junta Directiva lo será también de la Asociación, y tendrá las siguientes atribuciones:
+                            <ul>
+                                <li>a) Representar legalmente a la Asociación.</li>
+                                <li>b) Convocar, presidir y levantar las sesiones que celebre la Junta Directiva y la Asamblea General, dirigir las deliberaciones de una y otra, decidiendo con voto de calidad, en caso de empate.</li>
+                                <li>c) Proponer el plan de actividades de la Asociación a la Junta Directiva y dirigir sus tareas.</li>
+                                <li>d) Ordenar los pagos acordados válidamente.[cite: 6]</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="articulo-item">
+                        <div class="articulo-title">Artículo 16º y 17º (Secretario y Tesorero)</div>
+                        <div class="articulo-text">
+                            <strong>El Secretario</strong> recibirá y tramitará las solicitudes de ingreso y tendrá a cargo la dirección de los trabajos administrativos[cite: 6, 7].<br>
+                            <strong>El Tesorero</strong> dirigirá la contabilidad y tomará razón de los ingresos y de los gastos. Recaudará y custodiará los fondos pertenecientes a la Asociación y dará cumplimiento a las órdenes de pago que expida el presidente[cite: 7].
+                        </div>
                     </div>
                 </div>
             </div>
@@ -646,40 +689,87 @@
             <!-- CAPÍTULO TERCERO -->
             <div class="estatuto-capitulo">
                 <div class="capitulo-header" onclick="toggleCapitulo('cap3')">
-                    <span>CAPÍTULO TERCERO: De los Socios, Derechos y Deberes</span>
+                    <span>CAPÍTULO TERCERO: De los Socios, sus Derechos y Deberes</span>
                     <span id="icon-cap3">▼</span>
                 </div>
                 <div class="capitulo-content" id="cap3">
                     <div class="articulo-item">
-                        <div class="articulo-title">Artículo 19º. Miembros y Edad de Ingreso</div>
-                        <div class="articulo-text">Podrán ser miembros las personas físicas con capacidad de obrar[cite: 7]. Los menores no emancipados de más de <strong>14 años</strong> necesitarán el consentimiento documentalmente acreditado de quienes suplan su capacidad[cite: 7].</div>
+                        <div class="articulo-title">Artículo 18º al 20º (Miembros y Admisión)</div>
+                        <div class="articulo-text">Podrán ser miembros de la Asociación las personas con capacidad de obrar y no sujetas a ninguna condición legal para el ejercicio del derecho de asociarse[cite: 7]. Los menores no emancipados de más de catorce años necesitarán el consentimiento documentadamente acreditado de las personas que deban suplir su capacidad[cite: 7]. Quienes deseen pertenecer a la Asociación lo solicitarán por escrito al Presidente[cite: 7].</div>
                     </div>
                     <div class="articulo-item">
-                        <div class="articulo-title">Artículo 21º y 22º. Derechos y Deberes</div>
+                        <div class="articulo-title">Artículo 21º (Derechos de los Asociados)</div>
                         <div class="articulo-text">
-                            <strong>Derechos:</strong> Participar en actividades, ejercer voto en Asambleas e información sobre estados de cuentas[cite: 7, 8].<br>
-                            <strong>Deberes:</strong> Compartir las finalidades, pagar las cuotas y derramas acordadas y acatar los acuerdos válidos[cite: 8].
+                            Todo Asociado ostenta los siguientes derechos:
+                            <ul>
+                                <li>a) Participar en las actividades de la asociación y en los órganos de gobierno y representación, a ejercer el derecho de voto, así como asistir a la Asamblea General[cite: 7].</li>
+                                <li>b) Ser informado acerca de la composición de los órganos de gobierno y representación de la asociación, de su estado de cuentas y del desarrollo de su actividad[cite: 8].</li>
+                                <li>c) Ser oído con carácter previo a la adopción de medidas disciplinarias contra él y a ser informado de los hechos que den lugar a tales medidas[cite: 8].</li>
+                                <li>d) Impugnar los acuerdos de los órganos de la asociación que estime contrarios a la ley o los Estatutos[cite: 8].</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="articulo-item">
+                        <div class="articulo-title">Artículo 22º y 23º (Deberes y Sanciones)</div>
+                        <div class="articulo-text">
+                            <strong>Deberes:</strong> Compartir las finalidades de la asociación, pagar las cuotas y derramas establecidas, cumplir el resto de las obligaciones estatutarias y acatar los acuerdos válidamente adoptados[cite: 8].<br>
+                            <strong>Sanciones:</strong> Los socios podrán ser sancionados por la Junta Directiva por infringir los presentes Estatutos. Las sanciones podrán comprender desde la pérdida de sus derechos durante un tiempo determinado, hasta la separación definitiva[cite: 8].
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- CAPÍTULO CUARTO Y QUINTO -->
+            <!-- CAPÍTULO CUARTO -->
             <div class="estatuto-capitulo">
                 <div class="capitulo-header" onclick="toggleCapitulo('cap4')">
-                    <span>CAPÍTULOS IV Y V: Régimen Contable, Documental y Recursos</span>
+                    <span>CAPÍTULO CUARTO: Obligaciones Documentales y Contables</span>
                     <span id="icon-cap4">▼</span>
                 </div>
                 <div class="capitulo-content" id="cap4">
                     <div class="articulo-item">
-                        <div class="articulo-title">Artículo 24º. Libros Obligatorios</div>
-                        <div class="articulo-text">La Asociación dispondrá de: a) Relación actualizada de asociados, b) Contabilidad regular, c) Memoria de actividades, d) Inventario de bienes y e) Libro de Actas[cite: 8].</div>
+                        <div class="articulo-title">Artículo 24º (Libros y Documentación)</div>
+                        <div class="articulo-text">
+                            La asociación dispondrá de:
+                            <ul>
+                                <li>a) Una relación actualizada de sus asociados[cite: 8].</li>
+                                <li>b) Una contabilidad que permita obtener la imagen fiel del patrimonio, del resultado y de la situación financiera de la entidad[cite: 8].</li>
+                                <li>c) Una memoria con las actividades realizadas[cite: 8].</li>
+                                <li>d) Un inventario de sus bienes[cite: 8].</li>
+                                <li>e) Un Libro de Actas de las reuniones de sus órganos de gobierno[cite: 8].</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CAPÍTULO QUINTO -->
+            <div class="estatuto-capitulo">
+                <div class="capitulo-header" onclick="toggleCapitulo('cap5')">
+                    <span>CAPÍTULO QUINTO: Patrimonio Inicial y Recursos Económicos</span>
+                    <span id="icon-cap5">▼</span>
+                </div>
+                <div class="capitulo-content" id="cap5">
+                    <div class="articulo-item">
+                        <div class="articulo-title">Artículo 25º y 26º (Patrimonio y Recursos)</div>
+                        <div class="articulo-text">La Asociación carece de patrimonio inicial[cite: 9]. Los recursos económicos estarán constituidos por: cuotas de entrada, cuotas periódicas, productos de los bienes y derechos, legados, donaciones e ingresos de actividades[cite: 9].</div>
                     </div>
                     <div class="articulo-item">
-                        <div class="articulo-title">Artículo 25º y 26º. Cierre del Ejercicio y Recursos</div>
-                        <div class="articulo-text">
-                            La fecha de cierre del ejercicio asociativo será el día <strong>19 de agosto de cada año</strong>[cite: 8]. Los recursos económicos se integran por cuotas de entrada, cuotas periódicas, subvenciones, legados e ingresos de actividades exentas[cite: 9].
-                        </div>
+                        <div class="articulo-title">Artículo 27º al 29º (Cierre del Ejercicio)</div>
+                        <div class="articulo-text">La fecha de cierre del ejercicio asociativo será el día <strong>diecinueve de agosto de cada año</strong>[cite: 8]. La administración de los fondos se llevará a cabo con todo detalle[cite: 9].</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CAPÍTULO SEXTO -->
+            <div class="estatuto-capitulo">
+                <div class="capitulo-header" onclick="toggleCapitulo('cap6')">
+                    <span>CAPÍTULO SEXTO: Disolución</span>
+                    <span id="icon-cap6">▼</span>
+                </div>
+                <div class="capitulo-content" id="cap6">
+                    <div class="articulo-item">
+                        <div class="articulo-title">Artículo 30º (Causa de Disolución y Liquidación)</div>
+                        <div class="articulo-text">La Asociación se disolverá por voluntad de los asociados expresada en Asamblea General convocada al efecto[cite: 9]. Acordada la disolución, la Asamblea General nombrará una comisión liquidadora que concluirá las operaciones pendientes, cobrará los créditos, pagará a los acreedores y entregará los bienes sobrantes a una entidad benéfica o con fines análogos[cite: 9, 10].</div>
                     </div>
                 </div>
             </div>
