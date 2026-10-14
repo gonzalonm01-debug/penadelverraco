@@ -3,377 +3,594 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peña del Verraco</title>
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='31' fill='%231c1a17' stroke='%23c99a4d' stroke-width='2'/%3E%3Cpath d='M12 40 L17 28 L24 22 L22 15 L29 18 L34 15 L34 20 L43 18 L48 25 L54 25 L49 32 L52 40 L44 38 L40 45 L34 41 L28 46 L23 41 L14 45 Z' fill='%23c99a4d'/%3E%3C/svg%3E">
+    <title>Asociación Peña del Verraco — Torralba de Oropesa</title>
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700;9..144,900&family=Playfair+Display:wght@400;600;700;900&family=Merriweather:wght@300;400;700;900&family=Libre+Baskerville:wght@400;700&family=Bitter:wght@400;500;600;700;900&family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Serif+Display:wght@400&family=Crimson+Pro:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&family=Inter:wght@400;500;600&family=Lato:wght@400;700;900&family=Nunito+Sans:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&family=Mulish:wght@400;600;700&family=Karla:wght@400;600;700&family=PT+Sans:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* PALETA EXTRAÍDA DEL ESCUDO DE TORRALBA */
+            --blue-primary: #00509d;
+            --blue-hover: #003f7a;
+            --blue-light: #e8f1f9;
+            --red-accent: #d90429;
+            --gold-accent: #fdb813;
+            --bg-body: #f8f9fa;
+            --surface-card: #ffffff;
+            --text-dark: #1d2d44;
+            --text-muted: #6c757d;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-dark);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* --- NAVEGACIÓN INSTITUCIONAL --- */
+        .navbar {
+            background-color: var(--blue-primary);
+            border-bottom: 4px solid var(--gold-accent);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .navbar-brand {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #ffffff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .navbar-brand span {
+            background: var(--gold-accent);
+            color: var(--blue-primary);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 8px 14px;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background-color: rgba(255, 255, 255, 0.15);
+            color: var(--gold-accent);
+        }
+
+        /* --- HERO BANNER --- */
+        .hero {
+            background: linear-gradient(135deg, rgba(0, 80, 157, 0.92) 0%, rgba(0, 40, 80, 0.95) 100%), url('cena-socios.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--red-accent);
+        }
+
+        .hero-content {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            background-color: var(--red-accent);
+            color: #ffffff;
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 6px 16px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: #e2e8f0;
+            margin-bottom: 30px;
+        }
+
+        /* --- CONTENEDOR PRINCIPAL --- */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            display: none;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .section-header {
+            margin-bottom: 30px;
+            border-left: 5px solid var(--blue-primary);
+            padding-left: 15px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--blue-primary);
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- TARJETAS --- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background-color: var(--surface-card);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--blue-primary);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--border-color);
+            cursor: pointer;
+        }
+
+        .card-body {
+            padding: 22px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .tag {
+            background-color: var(--blue-primary);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .tag.urgent { background-color: var(--red-accent); }
+        .tag.gold { background-color: var(--gold-accent); color: var(--text-dark); }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            margin-bottom: 15px;
+        }
+
+        /* --- BOTONES --- */
+        .btn {
+            background-color: var(--blue-primary);
+            color: white;
+            border: none;
+            padding: 11px 22px;
+            border-radius: 6px;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.2s;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: var(--blue-hover);
+        }
+
+        .btn-gold {
+            background-color: var(--gold-accent);
+            color: var(--text-dark);
+        }
+
+        .btn-gold:hover {
+            background-color: #e5a400;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 12px 16px;
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            color: var(--text-dark);
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: var(--blue-primary);
+        }
+
+        /* --- JUNTA DIRECTIVA --- */
+        .grid-junta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .member-card {
+            background: var(--surface-card);
+            border: 1px solid var(--border-color);
+            border-top: 4px solid var(--blue-primary);
+            border-radius: 8px;
+            padding: 25px 15px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .member-avatar {
+            font-size: 2rem;
+            background: var(--blue-light);
+            width: 65px;
+            height: 65px;
+            line-height: 65px;
+            border-radius: 50%;
+            margin: 0 auto 15px auto;
+            border: 2px solid var(--blue-primary);
+        }
+
+        /* --- PANEL DE GESTIÓN (DASHBOARD) --- */
+        .dashboard-container {
+            background: var(--surface-card);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .dashboard-nav {
+            display: flex;
+            gap: 10px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background: var(--bg-body);
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .tab-btn.active {
+            background: var(--blue-primary);
+            color: #fff;
+            border-color: var(--blue-primary);
+        }
+
+        .admin-panel {
+            display: none;
+        }
+
+        .admin-panel.active {
+            display: block;
+        }
+
+        .resource-box {
+            background: var(--blue-light);
+            border: 2px dashed var(--blue-primary);
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            transition: 0.2s;
+        }
+
+        .resource-box:hover {
+            background: #dbeafe;
+            transform: translateY(-2px);
+        }
+
+        /* --- RESPONSIVE --- */
+        @media(max-width: 768px) {
+            .navbar { flex-direction: column; gap: 12px; padding: 15px; text-align: center; }
+            .nav-links { justify-content: center; }
+            .hero h1 { font-size: 2.1rem; }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- MENÚ SUPERIOR -->
+    <!-- MENÚ DE NAVEGACIÓN -->
     <nav class="navbar">
         <a href="#" class="navbar-brand" onclick="showSection('inicio')">
-            <span id="navbar-logo">
-                <svg class="logo-badge" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                    <circle class="ring" cx="32" cy="32" r="29" stroke-width="2"/>
-                    <path class="mark" d="M14 40 L19 28 L26 22 L24 15 L31 18 L36 15 L36 20 L45 18 L50 25 L56 25 L51 32 L54 40 L46 38 L42 45 L36 41 L30 46 L25 41 L16 45 Z"/>
-                </svg>
-            </span>
-            Peña del Verraco
+            🐗 Peña del Verraco <span>Torralba</span>
         </a>
         <div class="nav-links">
             <a href="#" id="link-inicio" class="nav-link active" onclick="showSection('inicio')">Inicio</a>
-            <a href="#" id="link-historia" class="nav-link" onclick="showSection('historia')">Conócenos</a>
-            <a href="#" id="link-avisos" class="nav-link" onclick="showSection('avisos')">Eventos</a>
-            <a href="#" id="link-votaciones" class="nav-link" onclick="showSection('votaciones')">Votaciones</a>
-            <a href="#" id="link-buzon" class="nav-link" onclick="showSection('buzon')">Buzón</a>
-            <a href="#" id="link-junta" class="nav-link" onclick="showSection('junta')">Junta</a>
-            <a href="#" id="link-estatutos" class="nav-link" onclick="showSection('estatutos')">Estatutos</a>
-            <a href="#" id="link-actas" class="nav-link" onclick="showSection('actas')">Actas</a>
-            <a href="#" id="link-gestion" class="nav-link" onclick="showSection('gestion')">Gestión</a>
+            <a href="#" id="link-eventos" class="nav-link" onclick="showSection('eventos')">Agenda</a>
+            <a href="#" id="link-junta" class="nav-link" onclick="showSection('junta')">Directiva</a>
+            <a href="#" id="link-normativa" class="nav-link" onclick="showSection('normativa')">Estatutos</a>
+            <a href="#" id="link-gestion" class="nav-link" onclick="showSection('gestion')">Gestión Interna</a>
         </div>
     </nav>
 
-    <!-- BIENVENIDA -->
-    <div class="hero">
-        <div class="hero-inner">
-            <span id="hero-logo">
-                <svg class="hero-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="32" cy="32" r="29" fill="#18160f" stroke="#d6a53f" stroke-width="2"/>
-                    <path d="M14 40 L19 28 L26 22 L24 15 L31 18 L36 15 L36 20 L45 18 L50 25 L56 25 L51 32 L54 40 L46 38 L42 45 L36 41 L30 46 L25 41 L16 45 Z" fill="#d6a53f"/>
-                    <circle cx="42" cy="27" r="1.6" fill="#18160f"/>
-                </svg>
-            </span>
-            <div class="hero-text">
-                <span class="hero-eyebrow" id="hero-eyebrow">Torralba · Fiestas 2026</span>
-                <h1 id="hero-titulo">Asociación de la Peña del Verraco</h1>
-                <p id="hero-subtitulo">Portal oficial de comunicación y gestión de la peña: eventos, cartelería, historia, votaciones, buzón de sugerencias y cuentas, todo en un mismo sitio.</p>
-                <div class="hero-ctas">
-                    <button class="btn-custom" onclick="showSection('avisos')">Ver todos los carteles</button>
-                    <button class="btn-custom ghost" onclick="showSection('historia')">Conoce nuestra historia</button>
-                </div>
+    <!-- CABECERA HERO -->
+    <header class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">Torralba de Oropesa • Fiestas 2026</span>
+            <h1>Asociación Cultural Peña del Verraco</h1>
+            <p>Portal oficial de comunicación, actividades y gestión transparente para los socios.</p>
+            <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+                <button class="btn btn-gold" onclick="showSection('eventos')">Ver Programa de Eventos</button>
+                <button class="btn btn-outline" onclick="showSection('gestion')">Acceso Directiva</button>
             </div>
         </div>
-    </div>
+    </header>
 
     <div class="container">
 
         <!-- SECCIÓN INICIO -->
         <div id="inicio" class="section active">
-            <div class="section-eyebrow c-wheat">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 15 L5 10 L8 8 L7 4 L11 6 L14 4 L14 7 L18 6 L21 9 L19 12 L21 15 L17 14 L15 18 L11 16 L8 19 L5 16 Z" stroke="currentColor" stroke-width="1.4"/></svg>
-                Novedades
+            <div class="section-header">
+                <h2 class="section-title">Aviso Destacado</h2>
+                <p class="section-subtitle">Información prioritaria de la junta directiva para todos los socios.</p>
             </div>
-            <h2 class="section-title">Destacado ahora mismo</h2>
-            <hr class="section-rule wheat">
-            <p class="section-intro">¡Se acercan los días grandes! Haz clic sobre los carteles para verlos a tamaño completo.</p>
-
-            <div class="grid-cards" style="justify-content: center; grid-template-columns: repeat(auto-fit, minmax(320px, 450px));" id="inicio-destacado">
-                <div class="custom-card">
-                    <a href="cena-socios.jpg" target="_blank" class="card-img-wrap">
-                        <img src="cena-socios.jpg" alt="Cena de Socios Peña el Verraco" class="card-img">
-                    </a>
-                    <div class="card-body">
-                        <span class="card-tag urgent">⚠️ Confirmar obligatorio</span>
-                        <h3 class="card-title">Cena de Socios 2026 — Restaurante La Piscina</h3>
-                        <p class="card-meta">
-                            <strong>Fecha:</strong> sábado 15 de agosto · 21:30 h.<br>
-                            <strong>Menú:</strong> tipo cóctel con barra libre, combinados gratis al finalizar y música hasta las 03:00 h.<br>
-                            <span style="color: var(--wheat-bright); font-weight: 600;">Plazo máximo de confirmación: hasta el 9 de agosto.</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- CONÓCENOS / HISTORIA -->
-        <div id="historia" class="section">
-            <div class="section-eyebrow c-clay">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 15 L5 10 L8 8 L7 4 L11 6 L14 4 L14 7 L18 6 L21 9 L19 12 L21 15 L17 14 L15 18 L11 16 L8 19 L5 16 Z" stroke="currentColor" stroke-width="1.4"/></svg>
-                Conócenos
-            </div>
-            <h2 class="section-title">Nuestra historia</h2>
-            <hr class="section-rule wheat">
-
-            <div class="historia-layout">
-                <div class="historia-text" id="historia-parrafos">
-                    <p>La <strong>Peña del Verraco</strong> nació de un grupo de vecinos de Torralba con ganas de que las fiestas del pueblo tuvieran más vida, más participación y más excusas para juntarse. El nombre rinde homenaje al verraco, símbolo de fuerza y de raíces de nuestra tierra.</p>
-                    <p>Desde entonces, la peña organiza cenas de confraternización, concursos, carreras y actividades para todas las edades, siempre gestionadas de forma transparente por una junta directiva elegida entre los propios socios.</p>
-                    <p>Hoy seguimos creciendo: más socios, más eventos y, con esta web, más formas de participar y opinar en las decisiones de la peña.</p>
-                </div>
-                <div class="timeline" id="historia-timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-year">Fundación</div>
-                        <p>Un grupo de socios fundadores pone en marcha la peña.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-year">Primeros años</div>
-                        <p>Se celebran las primeras cenas de socios y concursos populares.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-year">2026</div>
-                        <p>Estrenamos portal web propio, con votaciones y buzón de sugerencias para todos los socios.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- SECCIÓN ACTUALIDAD / PANFLETOS EVENTOS -->
-        <div id="avisos" class="section">
-            <div class="section-eyebrow c-wheat">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 15 L5 10 L8 8 L7 4 L11 6 L14 4 L14 7 L18 6 L21 9 L19 12 L21 15 L17 14 L15 18 L11 16 L8 19 L5 16 Z" stroke="currentColor" stroke-width="1.4"/></svg>
-                Agenda
-            </div>
-            <h2 class="section-title">Programa de eventos y cartelería</h2>
-            <hr class="section-rule wheat">
-            <div class="grid-cards" id="eventos-grid">
-                <div class="custom-card">
-                    <a href="concurso-tapas.jpeg" target="_blank" class="card-img-wrap">
-                        <img src="concurso-tapas.jpeg" alt="Concurso de Tapas Libre" class="card-img">
-                    </a>
-                    <div class="card-body">
-                        <span class="card-tag green">Sábado 8 agosto</span>
-                        <h3 class="card-title">Concurso de Tapas Libre: ¡La Patata!</h3>
-                        <p class="card-meta">
-                            <strong>Presentación:</strong> 13:00 h. | <strong>Cata:</strong> 13:30 h.<br>
-                            Habrá 3 grandes premios. ¡Cada socio disfruta de una consumición y tapa gratis! Animaros a participar.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="custom-card">
-                    <a href="autos-locos.jpeg" target="_blank" class="card-img-wrap">
-                        <img src="autos-locos.jpeg" alt="Vuelven los Autos Locos Torralba" class="card-img">
-                    </a>
-                    <div class="card-body">
-                        <span class="card-tag gold">Sábado 8 agosto</span>
-                        <h3 class="card-title">Vuelven los Autos Locos en Torralba</h3>
-                        <p class="card-meta">
-                            Las bases e inscripciones estarán disponibles próximamente. ¡Preparad vuestros bólidos más originales y divertidos para la gran carrera!
-                        </p>
-                    </div>
-                </div>
-
-                <div class="custom-card">
-                    <a href="cena-socios.jpg" target="_blank" class="card-img-wrap">
+            
+            <div class="grid" style="max-width: 500px; margin: 0 auto;">
+                <div class="card">
+                    <a href="cena-socios.jpg" target="_blank">
                         <img src="cena-socios.jpg" alt="Cena de Socios" class="card-img">
                     </a>
                     <div class="card-body">
-                        <span class="card-tag blue">Sábado 15 agosto</span>
-                        <h3 class="card-title">Gran Cena de Confraternización</h3>
-                        <p class="card-meta">
-                            Menú gourmet completo para socios en el Restaurante La Piscina de Oropesa. Recordad avisar alergias e intolerancias con antelación.
-                        </p>
+                        <div>
+                            <span class="tag urgent">⚠️ Confirmar Obligatorio</span>
+                            <h3>Cena de Socios 2026 — Restaurante La Piscina</h3>
+                            <p><strong>Fecha:</strong> Sábado 15 de agosto · 21:30 h.<br>Menú tipo cóctel, barra libre y música hasta las 03:00 h.<br><strong style="color: var(--red-accent);">Plazo límite de confirmación: 9 de agosto.</strong></p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- VOTACIONES ANÓNIMAS -->
-        <div id="votaciones" class="section">
-            <div class="section-eyebrow c-dusk">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 15 L5 10 L8 8 L7 4 L11 6 L14 4 L14 7 L18 6 L21 9 L19 12 L21 15 L17 14 L15 18 L11 16 L8 19 L5 16 Z" stroke="currentColor" stroke-width="1.4"/></svg>
-                Participación
+        <!-- SECCIÓN AGENDA / EVENTOS -->
+        <div id="eventos" class="section">
+            <div class="section-header">
+                <h2 class="section-title">Programa de Eventos y Cartelería</h2>
+                <p class="section-subtitle">Haz clic sobre cualquier cartel para ampliar la imagen.</p>
             </div>
-            <h2 class="section-title">Votaciones de la peña</h2>
-            <hr class="section-rule dusk">
-            <p class="section-intro">Decidimos entre todos: orquesta, actividades, fechas... Vota sin que nadie sepa qué has elegido.</p>
 
-            <div class="embed-card">
-                <span class="anon-pill">🔒 Voto 100% anónimo</span>
-                <div class="embed-frame-wrap">
-                    <iframe id="iframe-votaciones" src="https://docs.google.com/forms/d/e/PON-AQUI-TU-FORMULARIO/viewform?embedded=true" title="Votación de la peña">Cargando votación…</iframe>
+            <div class="grid">
+                <!-- Concurso de Tapas -->
+                <div class="card">
+                    <a href="concurso-tapas.jpeg" target="_blank">
+                        <img src="concurso-tapas.jpeg" alt="Concurso de Tapas" class="card-img">
+                    </a>
+                    <div class="card-body">
+                        <div>
+                            <span class="tag gold">Sábado 8 Agosto</span>
+                            <h3>Concurso de Tapas Libre: ¡La Patata!</h3>
+                            <p>Presentación a las 13:00 h y cata a las 13:30 h. 3 grandes premios y consumición con tapa gratis para cada socio.</p>
+                        </div>
+                    </div>
                 </div>
-                <p class="draft-note" style="margin-top:16px;">📝 Sustituye el enlace del recuadro de arriba por tu propio Google Form.</p>
+
+                <!-- Autos Locos -->
+                <div class="card">
+                    <a href="autos-locos.jpeg" target="_blank">
+                        <img src="autos-locos.jpeg" alt="Autos Locos" class="card-img">
+                    </a>
+                    <div class="card-body">
+                        <div>
+                            <span class="tag">Sábado 8 Agosto</span>
+                            <h3>Vuelven los Autos Locos en Torralba</h3>
+                            <p>Prepara vuestros bólidos más originales y divertidos para la gran bajada. Próximamente bases e inscripciones.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cena de Socios -->
+                <div class="card">
+                    <a href="cena-socios.jpg" target="_blank">
+                        <img src="cena-socios.jpg" alt="Cena de Socios" class="card-img">
+                    </a>
+                    <div class="card-body">
+                        <div>
+                            <span class="tag urgent">Sábado 15 Agosto</span>
+                            <h3>Gran Cena de Confraternización</h3>
+                            <p>Cena completa en el Restaurante La Piscina de Oropesa. Recordad avisar alergias e intolerancias con antelación.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- BUZÓN DE SUGERENCIAS -->
-        <div id="buzon" class="section">
-            <div class="section-eyebrow c-rosemary">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 15 L5 10 L8 8 L7 4 L11 6 L14 4 L14 7 L18 6 L21 9 L19 12 L21 15 L17 14 L15 18 L11 16 L8 19 L5 16 Z" stroke="currentColor" stroke-width="1.4"/></svg>
-                Tu opinión cuenta
-            </div>
-            <h2 class="section-title">Buzón de sugerencias</h2>
-            <hr class="section-rule rosemary">
-            <p class="section-intro">¿Propuestas, quejas o ideas para la peña? Cuéntanoslas aquí, de forma anónima si lo prefieres.</p>
-
-            <div class="embed-card">
-                <span class="anon-pill">🔒 Envío anónimo</span>
-                <div class="embed-frame-wrap">
-                    <iframe id="iframe-buzon" src="https://docs.google.com/forms/d/e/PON-AQUI-TU-FORMULARIO-SUGERENCIAS/viewform?embedded=true" title="Buzón de sugerencias">Cargando buzón…</iframe>
-                </div>
-                <p class="draft-note" style="margin-top:16px;">📝 Crea el Google Form de sugerencias y sustituye este enlace por el tuyo.</p>
-            </div>
-        </div>
-
-        <!-- JUNTA DIRECTIVA -->
+        <!-- SECCIÓN JUNTA DIRECTIVA -->
         <div id="junta" class="section">
-            <div class="section-eyebrow c-wheat">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 15 L5 10 L8 8 L7 4 L11 6 L14 4 L14 7 L18 6 L21 9 L19 12 L21 15 L17 14 L15 18 L11 16 L8 19 L5 16 Z" stroke="currentColor" stroke-width="1.4"/></svg>
-                Quiénes somos
+            <div class="section-header">
+                <h2 class="section-title">Junta Directiva</h2>
+                <p class="section-subtitle">Representantes de la Asociación Cultural Peña del Verraco.</p>
             </div>
-            <h2 class="section-title">Junta Directiva</h2>
-            <hr class="section-rule wheat">
-            <div class="grid-junta" id="junta-grid">
-                <div class="junta-member"><div class="member-avatar">👑</div><h3>Diego</h3><p>Presidente</p></div>
-                <div class="junta-member"><div class="member-avatar">🥈</div><h3>Yolanda Cuadrado</h3><p>Vicepresidenta</p></div>
-                <div class="junta-member"><div class="member-avatar">📝</div><h3>Gonzalo Nava</h3><p>Secretario</p></div>
-                <div class="junta-member"><div class="member-avatar">💰</div><h3>Rocío Olmedo</h3><p>Tesorera</p></div>
-                <div class="junta-member"><div class="member-avatar">🤝</div><h3>Marcos Nevado</h3><p>Vocal</p></div>
-                <div class="junta-member"><div class="member-avatar">🤝</div><h3>Marcos</h3><p>Vocal</p></div>
-                <div class="junta-member"><div class="member-avatar">🤝</div><h3>Emilio</h3><p>Vocal</p></div>
+
+            <div class="grid-junta">
+                <div class="member-card"><div class="member-avatar">👑</div><h3>Diego</h3><p style="color:var(--blue-primary); font-weight:700; font-size:0.9rem;">Presidente</p></div>
+                <div class="member-card"><div class="member-avatar">🥈</div><h3>Yolanda Cuadrado</h3><p style="color:var(--blue-primary); font-weight:700; font-size:0.9rem;">Vicepresidenta</p></div>
+                <div class="member-card"><div class="member-avatar">📝</div><h3>Gonzalo Nava</h3><p style="color:var(--blue-primary); font-weight:700; font-size:0.9rem;">Secretario</p></div>
+                <div class="member-card"><div class="member-avatar">💰</div><h3>Rocío Olmedo</h3><p style="color:var(--blue-primary); font-weight:700; font-size:0.9rem;">Tesorera</p></div>
+                <div class="member-card"><div class="member-avatar">🤝</div><h3>Marcos Nevado</h3><p style="color:var(--blue-primary); font-weight:700; font-size:0.9rem;">Vocal</p></div>
+                <div class="member-card"><div class="member-avatar">🤝</div><h3>Marcos</h3><p style="color:var(--blue-primary); font-weight:700; font-size:0.9rem;">Vocal</p></div>
+                <div class="member-card"><div class="member-avatar">🤝</div><h3>Emilio</h3><p style="color:var(--blue-primary); font-weight:700; font-size:0.9rem;">Vocal</p></div>
             </div>
         </div>
 
-        <!-- ESTATUTOS -->
-        <div id="estatutos" class="section">
-            <div class="section-eyebrow c-clay">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 15 L5 10 L8 8 L7 4 L11 6 L14 4 L14 7 L18 6 L21 9 L19 12 L21 15 L17 14 L15 18 L11 16 L8 19 L5 16 Z" stroke="currentColor" stroke-width="1.4"/></svg>
-                Normativa
+        <!-- SECCIÓN ESTATUTOS -->
+        <div id="normativa" class="section">
+            <div class="section-header">
+                <h2 class="section-title">Estatutos Oficiales</h2>
+                <p class="section-subtitle">Marco normativo de la entidad.</p>
             </div>
-            <h2 class="section-title">Estatutos oficiales</h2>
-            <hr class="section-rule wheat">
-            <div class="custom-card"><div class="card-body">
-                <h3 style="margin-top:0; color: var(--wheat-bright); font-size: 1.05rem;">Artículo 1: Denominación</h3>
-                <p class="card-meta">La <strong style="color: var(--limestone);">Asociación de la Peña del Verraco</strong> se rige como una entidad cultural y festiva sin ánimo de lucro...</p>
-            </div></div>
+            <div class="card" style="padding: 25px;">
+                <h3 style="color: var(--blue-primary); margin-bottom: 10px;">Artículo 1: Denominación y Objeto</h3>
+                <p style="color: var(--text-muted);">La Asociación de la Peña del Verraco se constituye como entidad cultural y recreativa sin ánimo de lucro en Torralba de Oropesa, orientada al fomento de las festividades locales y la convivencia de sus socios.</p>
+            </div>
         </div>
 
-        <!-- ACTAS -->
-        <div id="actas" class="section">
-            <div class="section-eyebrow c-dusk">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 15 L5 10 L8 8 L7 4 L11 6 L14 4 L14 7 L18 6 L21 9 L19 12 L21 15 L17 14 L15 18 L11 16 L8 19 L5 16 Z" stroke="currentColor" stroke-width="1.4"/></svg>
-                Archivo
-            </div>
-            <h2 class="section-title">Actas de reuniones</h2>
-            <hr class="section-rule dusk">
-            <div class="custom-card"><div class="card-body">
-                <p class="card-meta">Las actas firmadas por Gonzalo están archivadas en la carpeta oficial de la secretaría, a disposición de los socios.</p>
-            </div></div>
-        </div>
-
-        <!-- ACCESO PRIVADO DIRECTIVA (REDISEÑADO Y PROFESIONAL) -->
+        <!-- SECCIÓN GESTIÓN INTERNA -->
         <div id="gestion" class="section">
-            <div class="section-eyebrow c-clay">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 6c1.4 0 2.5 1.1 2.5 2.5 0 .9-.5 1.7-1.2 2.1l1.2 3.4h-5l1.2-3.4c-.7-.4-1.2-1.2-1.2-2.1C9.5 8.1 10.6 7 12 7z" fill="currentColor"/></svg>
-                Zona Privada Directiva
-            </div>
-            <h2 class="section-title">Panel de Control Ejecutivo</h2>
-            <hr class="section-rule wheat">
-
-            <!-- Formulario de Acceso Profesional -->
-            <div id="login-form" class="custom-card" style="max-width: 460px; margin: 30px auto; border: 1px solid rgba(214, 165, 63, 0.3); background: rgba(24, 22, 15, 0.85); backdrop-filter: blur(10px); box-shadow: 0 15px 35px rgba(0,0,0,0.5);">
-                <div class="card-body" style="text-align: center; padding: 35px 25px;">
-                    <div style="width: 60px; height: 60px; margin: 0 auto 15px auto; background: rgba(214, 165, 63, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid var(--wheat);">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--wheat-bright)" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                    </div>
-                    <h3 style="margin: 0 0 8px 0; color: #ffffff; font-size: 1.3rem;">Acceso Restringido</h3>
-                    <p class="card-meta" style="margin-bottom: 25px;">Introduce la clave maestra de la junta directiva para acceder a los recursos:</p>
-                    
-                    <div class="pass-field-wrap" style="position: relative; max-width: 320px; margin: 0 auto 15px auto;">
-                        <input type="password" id="pass" class="input-custom" placeholder="Clave de seguridad..." style="width: 100%; padding: 12px 42px 12px 15px; border-radius: 6px; border: 1px solid #3d352e; background: #12100a; color: #fff; font-size: 0.95rem; box-sizing: border-box;">
-                        <button type="button" class="pass-toggle" id="pass-toggle" onclick="togglePass()" aria-label="Mostrar contraseña" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; color: #a59e95; cursor: pointer;">
-                            <svg id="eye-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                        </button>
-                    </div>
-                    
-                    <button class="btn-custom" onclick="checkPass()" style="width: 100%; max-width: 320px; padding: 12px; font-weight: 600; letter-spacing: 0.5px; border-radius: 6px;">Entrar al Dashboard</button>
-                    <p id="error-msg" style="color: #e63946; display: none; margin-top: 15px; font-weight: 600; font-size: 0.88rem;">⚠️ Clave de acceso incorrecta</p>
-                </div>
+            <div class="section-header">
+                <h2 class="section-title">Escritorio de Gestión Interna</h2>
+                <p class="section-subtitle">Área de acceso exclusivo para la Junta Directiva.</p>
             </div>
 
-            <!-- DASHBOARD COMPLETO Y MEJORADO -->
-            <div id="admin-content" style="display: none;">
+            <!-- LOGIN -->
+            <div id="login-box" class="card" style="max-width: 420px; margin: 0 auto; padding: 35px 25px; text-align: center;">
+                <div style="font-size: 2.5rem; margin-bottom: 15px;">🔒</div>
+                <h3 style="margin-bottom: 10px;">Acceso Protegido</h3>
+                <p style="font-size: 0.9rem; margin-bottom: 20px; color: var(--text-muted);">Introduce la clave secreta de acceso:</p>
+                <input type="password" id="admin-pass" class="input-field" placeholder="Contraseña...">
+                <button class="btn" onclick="checkPassword()" style="width: 100%;">Ingresar al Panel</button>
+                <p id="login-error" style="color: var(--red-accent); font-size: 0.85rem; margin-top: 15px; display: none; font-weight: 700;">⚠️ Clave incorrecta</p>
+            </div>
+
+            <!-- DASHBOARD OCULTO -->
+            <div id="dashboard-box" class="dashboard-container" style="display: none;">
                 
-                <!-- KPI Bar (Métricas Rápidas) -->
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 30px;">
-                    <div style="background: rgba(45, 40, 36, 0.7); border: 1px solid #3d352e; border-radius: 8px; padding: 18px; text-align: center;">
-                        <span style="font-size: 0.75rem; color: #a59e95; text-transform: uppercase; font-weight: 600;">Socios Registrados</span>
-                        <div style="font-size: 1.8rem; font-weight: 700; color: var(--wheat-bright); margin-top: 5px;">Rocío (Gestión)</div>
-                    </div>
-                    <div style="background: rgba(45, 40, 36, 0.7); border: 1px solid #3d352e; border-radius: 8px; padding: 18px; text-align: center;">
-                        <span style="font-size: 0.75rem; color: #a59e95; text-transform: uppercase; font-weight: 600;">Estado de Cuentas</span>
-                        <div style="font-size: 1.8rem; font-weight: 700; color: #2a9d8f; margin-top: 5px;">Auditoría 2026</div>
-                    </div>
-                    <div style="background: rgba(45, 40, 36, 0.7); border: 1px solid #3d352e; border-radius: 8px; padding: 18px; text-align: center;">
-                        <span style="font-size: 0.75rem; color: #a59e95; text-transform: uppercase; font-weight: 600;">Votaciones Activas</span>
-                        <div style="font-size: 1.8rem; font-weight: 700; color: #4a90e2; margin-top: 5px;">1 Abierta</div>
-                    </div>
+                <div class="dashboard-nav">
+                    <button class="tab-btn active" onclick="switchAdminTab('tab-links')">📂 Enlaces Maestros</button>
+                    <button class="tab-btn" onclick="switchAdminTab('tab-votaciones')">🗳️ Votaciones Activas</button>
+                    <button class="tab-btn" onclick="switchAdminTab('tab-cuentas')">📊 Balances y Cuentas</button>
                 </div>
 
-                <!-- Botones de Pestañas con Diseño Ejecutivo -->
-                <div class="admin-nav" style="display: flex; gap: 12px; margin-bottom: 25px; border-bottom: 2px solid #3d352e; padding-bottom: 12px; flex-wrap: wrap;">
-                    <button class="admin-tab-btn active" id="btn-tab-links" onclick="showAdminTab('tab-links')" style="display: flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: 6px; background: #282320; color: #a59e95; border: 1px solid #3d352e; cursor: pointer; font-weight: 600; transition: all 0.25s ease;">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-                        Bases de Datos y Trabajo
-                    </button>
-                    <button class="admin-tab-btn" id="btn-tab-votaciones" onclick="showAdminTab('tab-votaciones')" style="display: flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: 6px; background: #282320; color: #a59e95; border: 1px solid #3d352e; cursor: pointer; font-weight: 600; transition: all 0.25s ease;">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L7 17l-5-5"></path><path d="M22 10l-7.5 7.5L13 16"></path></svg>
-                        Control de Votaciones
-                    </button>
-                    <button class="admin-tab-btn" id="btn-tab-cuentas" onclick="showAdminTab('tab-cuentas')" style="display: flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: 6px; background: #282320; color: #a59e95; border: 1px solid #3d352e; cursor: pointer; font-weight: 600; transition: all 0.25s ease;">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
-                        Panel Económico
-                    </button>
-                </div>
-
-                <!-- Sub-Panel 1: Enlaces Externos con Tarjetas Visuales -->
+                <!-- Sub-Panel 1: Enlaces -->
                 <div id="tab-links" class="admin-panel active">
-                    <div class="grid-management-links" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px;">
-                        
-                        <div style="background: rgba(37, 33, 30, 0.9); border: 1px solid #3d352e; border-top: 4px solid var(--wheat); border-radius: 8px; padding: 25px; transition: transform 0.2s ease;">
-                            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
-                                <div style="font-size: 2rem;">👥</div>
-                                <span style="background: rgba(214, 165, 63, 0.15); color: var(--wheat-bright); font-size: 0.7rem; padding: 4px 10px; border-radius: 4px; font-weight: 700; text-transform: uppercase;">Libro Oficial</span>
-                            </div>
-                            <h3 style="color: #ffffff; margin: 0 0 8px 0; font-size: 1.2rem;">Libro Maestro de Socios</h3>
-                            <p style="color: #a59e95; font-size: 0.88rem; margin-bottom: 20px; line-height: 1.5;">Base de datos en la nube para altas, bajas, cuotas cobradas y estado de pagos coordinado con Rocío Olmedo.</p>
-                            <a href="https://docs.google.com/spreadsheets/d/1aNNenQc3E_5HzvcqqcxxyveMbG2mJzGl/edit?rtpof=true&gid=540429647#gid=540429647" target="_blank" class="btn-custom" style="display: block; text-align: center; text-decoration: none; padding: 10px; font-size: 0.9rem;">Abrir Excel en Google Sheets ↗</a>
-                        </div>
-
-                        <div style="background: rgba(37, 33, 30, 0.9); border: 1px solid #3d352e; border-top: 4px solid #2a9d8f; border-radius: 8px; padding: 25px; transition: transform 0.2s ease;">
-                            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
-                                <div style="font-size: 2rem;">🗂️</div>
-                                <span style="background: rgba(42, 157, 143, 0.15); color: #2a9d8f; font-size: 0.7rem; padding: 4px 10px; border-radius: 4px; font-weight: 700; text-transform: uppercase;">Auditoría</span>
-                            </div>
-                            <h3 style="color: #ffffff; margin: 0 0 8px 0; font-size: 1.2rem;">Cuentas Generales de la Peña</h3>
-                            <p style="color: #a59e95; font-size: 0.88rem; margin-bottom: 20px; line-height: 1.5;">Hoja de desglose contable general: ingresos de eventos, gastos de orquestas, barra y compras para fiestas.</p>
-                            <a href="https://docs.google.com/spreadsheets/d/1sDfrrNwYSFY1pFQ6vfoT_BHD8uujr8HiGidAIFfPW3M/edit?gid=1085146374#gid=1085146374" target="_blank" class="btn-custom" style="display: block; text-align: center; text-decoration: none; padding: 10px; font-size: 0.9rem; background-color: #2a9d8f;">Abrir Cuentas Generales ↗</a>
-                        </div>
-
+                    <div class="grid">
+                        <a href="https://docs.google.com/spreadsheets/d/1aNNenQc3E_5HzvcqqcxxyveMbG2mJzGl/edit?rtpof=true&gid=540429647#gid=540429647" target="_blank" class="resource-box">
+                            <span style="font-size: 2.5rem;">👥</span>
+                            <h3 style="color: var(--blue-primary); margin: 10px 0 5px 0;">Libro Maestro de Socios</h3>
+                            <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0;">Gestión de cobros, cuotas y altas con Rocío Olmedo.</p>
+                        </a>
+                        <a href="https://docs.google.com/spreadsheets/d/1sDfrrNwYSFY1pFQ6vfoT_BHD8uujr8HiGidAIFfPW3M/edit?gid=1085146374#gid=1085146374" target="_blank" class="resource-box">
+                            <span style="font-size: 2.5rem;">🗂️</span>
+                            <h3 style="color: var(--blue-primary); margin: 10px 0 5px 0;">Cuentas Generales</h3>
+                            <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0;">Presupuestos y gastos de la peña.</p>
+                        </a>
                     </div>
                 </div>
 
-                <!-- Sub-Panel 2: Control de Votaciones -->
-                <div id="tab-votaciones" class="admin-panel" style="display: none;">
-                    <div style="background: rgba(37, 33, 30, 0.9); border: 1px solid #3d352e; border-radius: 8px; padding: 25px;">
-                        <h3 style="margin-top:0; color: #ffffff; font-size: 1.1rem; border-bottom: 1px solid #3d352e; padding-bottom: 10px;">🗳️ Gestión de Encuestas y Decisiones</h3>
-                        <div style="background: #1c1916; border-left: 4px solid #4a90e2; padding: 18px; border-radius: 6px; margin-top: 15px;">
-                            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
-                                <div>
-                                    <strong style="color: #ffffff; font-size: 1rem;">Elección de Orquesta — Fiestas 2026</strong>
-                                    <p style="color: #a59e95; margin: 5px 0 0 0; font-size: 0.88rem;">Formulario público vinculado a la pestaña Votaciones.</p>
-                                </div>
-                                <span style="background: rgba(74, 144, 226, 0.2); color: #4a90e2; font-size: 0.75rem; padding: 5px 12px; border-radius: 20px; font-weight: 700; text-transform: uppercase;">Abierta / Recibiendo respuestas</span>
-                            </div>
+                <!-- Sub-Panel 2: Votaciones -->
+                <div id="tab-votaciones" class="admin-panel">
+                    <div style="background: var(--blue-light); padding: 20px; border-radius: 8px; border-left: 4px solid var(--blue-primary);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                            <strong style="font-size: 1.05rem; color: var(--blue-primary);">Elección de Orquesta — Fiestas 2026</strong>
+                            <span class="tag gold" style="margin: 0;">En Proceso</span>
                         </div>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Sondeo activo para la contratación musical del sábado noche.</p>
                     </div>
                 </div>
 
-                <!-- Sub-Panel 3: Panel Económico -->
-                <div id="tab-cuentas" class="admin-panel" style="display: none;">
-                    <div style="background: rgba(37, 33, 30, 0.9); border: 1px solid #3d352e; border-radius: 8px; padding: 25px;">
-                        <h3 style="margin-top:0; color: #ffffff; font-size: 1.1rem; border-bottom: 1px solid #3d352e; padding-bottom: 10px;">📊 Ejercicio Económico 2026</h3>
-                        <div style="display: flex; justify-content: space-between; align-items: center; background: #1c1916; padding: 16px 20px; border-radius: 6px; margin-top: 15px; border: 1px solid #3d352e;">
-                            <div>
-                                <strong style="color: var(--wheat-bright);">Balance Contable — Primer Trimestre 2026</strong>
-                                <p style="color: #a59e95; margin: 3px 0 0 0; font-size: 0.85rem;">Resumen de ingresos por cuotas iniciales e imprevistos.</p>
-                            </div>
-                            <a href="https://docs.google.com/spreadsheets/d/1sDfrrNwYSFY1pFQ6vfoT_BHD8uujr8HiGidAIFfPW3M/edit?gid=1085146374#gid=1085146374" target="_blank" class="btn-custom" style="padding: 8px 18px; font-size: 0.85rem; text-decoration: none;">Ver Balance ↗</a>
+                <!-- Sub-Panel 3: Cuentas -->
+                <div id="tab-cuentas" class="admin-panel">
+                    <div style="background: var(--bg-body); padding: 20px; border-radius: 8px; border: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+                        <div>
+                            <strong style="color: var(--blue-primary);">Ejercicio Económico 2026 — Primer Trimestre</strong>
+                            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 3px;">Auditoría de fondos y caja inicial.</p>
                         </div>
+                        <a href="https://docs.google.com/spreadsheets/d/1sDfrrNwYSFY1pFQ6vfoT_BHD8uujr8HiGidAIFfPW3M/edit?gid=1085146374#gid=1085146374" target="_blank" class="btn" style="padding: 8px 16px; font-size: 0.85rem;">Ver Excel ↗</a>
                     </div>
                 </div>
 
@@ -382,60 +599,39 @@
 
     </div>
 
+    <!-- SCRIPTS -->
     <script>
-        // --- Navegación entre secciones públicas ---
         function showSection(sectionId) {
             document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
             document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
             
-            const targetSection = document.getElementById(sectionId);
-            if (targetSection) targetSection.classList.add('active');
+            const target = document.getElementById(sectionId);
+            if (target) target.classList.add('active');
             
-            const activeLink = document.getElementById('link-' + sectionId);
-            if (activeLink) activeLink.classList.add('active');
+            const link = document.getElementById('link-' + sectionId);
+            if (link) link.classList.add('active');
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // --- Verificación de contraseña de directiva ---
-        function checkPass() {
-            const pass = document.getElementById('pass').value;
+        function checkPassword() {
+            const pass = document.getElementById('admin-pass').value;
             if (pass === "verraco2026") {
-                document.getElementById('login-form').style.display = 'none';
-                document.getElementById('admin-content').style.display = 'block';
+                document.getElementById('login-box').style.display = 'none';
+                document.getElementById('dashboard-box').style.display = 'block';
             } else {
-                document.getElementById('error-msg').style.display = 'block';
+                document.getElementById('login-error').style.display = 'block';
             }
         }
 
-        // --- Mostrar / Ocultar Contraseña ---
-        function togglePass() {
-            const passInput = document.getElementById('pass');
-            if (passInput.type === "password") {
-                passInput.type = "text";
-            } else {
-                passInput.type = "password";
-            }
-        }
-
-        // --- Sub-pestañas del Panel de Gestión Interna ---
-        function showAdminTab(tabId) {
-            document.querySelectorAll('.admin-panel').forEach(panel => panel.style.display = 'none');
-            document.querySelectorAll('.admin-tab-btn').forEach(btn => {
-                btn.classList.remove('active');
-                btn.style.background = '#282320';
-                btn.style.color = '#a59e95';
-                btn.style.borderColor = '#3d352e';
-            });
+        function switchAdminTab(tabId) {
+            document.querySelectorAll('.admin-panel').forEach(panel => panel.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
             
-            const activePanel = document.getElementById(tabId);
-            if (activePanel) activePanel.style.display = 'block';
+            const panel = document.getElementById(tabId);
+            if (panel) panel.classList.add('active');
             
-            const activeBtn = document.getElementById('btn-' + tabId);
-            if (activeBtn) {
-                activeBtn.classList.add('active');
-                activeBtn.style.background = 'var(--wheat, #8b5a2b)';
-                activeBtn.style.color = '#ffffff';
-                activeBtn.style.borderColor = 'var(--wheat, #8b5a2b)';
-            }
+            event.target.classList.add('active');
         }
     </script>
 </body>
